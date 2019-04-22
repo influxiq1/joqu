@@ -1,0 +1,35 @@
+<div class="joqu_login_wrappper">
+<mat-card class="s_getmyoffer">
+
+  <mat-card-content class="s_getmyoffer_login_wrapper">
+     <span class="logo_wrapper_login">
+      <img mat-card-image src="../../assets/images/joqulogo.png" alt="#"  style="box-shadow: none;">
+    </span>
+    <mat-card-subtitle [formGroup]="myForm">
+      <h1>Login</h1>
+      <p>welcome back!</p>
+      <mat-error class="error" *ngIf="errormg!=''">{{errormg}}</mat-error>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Username" [formControl]="myForm.controls['email']" (blur)="clearfun('email')" >
+        <mat-error  *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">Email field can not be blank</mat-error>
+        <span></span>
+      </mat-form-field>
+
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Password" type="password" [formControl]="myForm.controls['password']" (blur)="clearfun('password')">
+        <span  *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched">Password field can not be blank</span>
+      </mat-form-field>
+      <mat-card-content >
+        <button mat-button  (click)="onSubmit()" class="s_getmyoffer_login_button"  >Login</button>
+      </mat-card-content>
+
+      <mat-card-content class="form-group-forgetPass">
+        <button mat-button (click)="onForgetPassword()"  class="shatter_block_forgetPass">forget Password?</button>
+      </mat-card-content>
+    </mat-card-subtitle>
+  </mat-card-content>
+
+</mat-card>
+
+</div>

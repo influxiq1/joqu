@@ -1,0 +1,75 @@
+<app-main-nav>
+  <mat-grid-list class="searchbar" cols="2" rowHeight="6:1">
+    <mat-grid-tile>
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <span class="add_button_wrapper">
+        <button mat-raised-button (click)="addButton()"> Add</button>
+      </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" [class.isMobile]="isMobile">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="mobile-label">ID</span>{{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> <span class="mobile-label">Name</span>{{element.name}}  </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element">  <span class="mobile-label">Age</span>{{element.age}} </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element">  <span class="mobile-label">Address</span>{{element.address}} </td>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Phone </th>
+      <td mat-cell *matCellDef="let element"> <span class="mobile-label">Phone</span>{{element.phone}} </td>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status </th>
+      <td mat-cell *matCellDef="let element"><span class="mobile-label">Status</span> {{element.status}} </td>
+    </ng-container>
+    <!-- action Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions </th>
+      <td mat-cell *matCellDef="let element" >
+        <span class="mobile-label">Actions</span>
+        <span class="actions">
+          <button mat-raised-button title="Edit"><i class="material-icons"> edit</i></button>
+          <button mat-raised-button title="Delete"><i class="material-icons" > delete</i></button>
+          <button mat-raised-button title="Update"><i class="material-icons" > restore_page</i></button>
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>-->
+</div>
+
+
+</app-main-nav>

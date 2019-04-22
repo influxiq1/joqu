@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container main_side_nav">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <span class="nav-image" routerLink="/dashboard">
+        <img mat-card-image src="../../assets/images/joqulogo2.png">
+        </span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/adminlist">Admin List</a>
+      <a mat-list-item routerLink="#">User List</a>
+      <a mat-list-item routerLink="#">User Management</a>
+      <a mat-list-item routerLink="#">Brand Management</a>
+      <a mat-list-item routerLink="#">Products List</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar_header">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!--<span>joqu</span>-->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

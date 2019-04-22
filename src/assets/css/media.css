@@ -1,0 +1,60 @@
+@media only screen and (max-width: 960px) {
+    .mat-dialog-container{ width: 80vw!important; }
+    .form_wrapper {
+        width: auto!important;
+    }
+
+
+}
+@media only screen and (max-width: 500px) {
+    .s_getmyoffer_login_wrapper {
+        width:70% !important; padding: 26px 5%!important;  margin-bottom: 40px!important;
+    }
+    .s_getmyoffer .s_shatter_logo {
+        margin-top: 50px!important;
+    }
+}
+@media(max-width: 668px) {
+    .mobile-label {
+        width:100px!important;
+        display: inline-block!important;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .mat-header-row {
+        display: none!important;
+    }
+
+    .mat-row {
+        flex-direction: column!important;
+        align-items: start!important;
+        padding: 8px!important;
+        display: flex!important;
+    }
+    tr.mat-footer-row, tr.mat-row {
+        height: auto!important;
+    }
+    td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+        width: 100%!important;
+    }
+    .actions {
+        flex-direction: column;
+        display: initial;
+    }
+    td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{padding-left: 0!important;}
+    .mat-raised-button{margin: 3px!important;}
+    .mat-paginator-container {
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        border-top: 2px solid #f2f1f3;
+        justify-content: center!important;
+    }
+}
+@media(max-width: 332px) {
+    .mobile-label {
+        width:80px!important;
+
+    }
+}
