@@ -1,0 +1,13 @@
+<app-main-nav>
+  <div class="mat-elevation-z8">
+<lib-listing    *ngIf="joquuserlist!=null && joquuserlist.length>0"
+                [datasource]="joquuserlist"
+                [skip]="joquuserlist_skip"
+                [modify_header_array]="joquuserlist_modify_header1"
+                [apiurl]="apiservice.domain"
+                [jwttoken]="apiservice.jwttoken"
+                [statusarr]="joquuserlist_statusarray"
+              >
+</lib-listing>
+  </div>
+</app-main-nav>

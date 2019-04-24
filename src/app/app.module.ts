@@ -21,11 +21,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminlistComponent } from './adminlist/adminlist.component';
 import  { DemoMaterialModule } from '../material-module';
 // import { LoginComponent } from './login/login.component';
-import { ListingComponent } from '../../node_modules/listing-angular7';
+import {ListingModule} from 'listing-angular7';
 import {MatTableModule} from '@angular/material/table';
 import { FormComponent } from './form/form.component';
 import { GridviewComponent } from './gridview/gridview.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { JoqulistComponent } from './joqulist/joqulist.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     ForgetpasswordComponent,
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
-    ListingComponent,
+    JoqulistComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     HttpClientModule,
     LayoutModule,
     DemoMaterialModule,
+    ListingModule
   ],
   providers: [CookieService, Resolveservice, ApiService, AuthGuard],
   bootstrap: [AppComponent],

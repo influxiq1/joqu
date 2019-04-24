@@ -1,11 +1,8 @@
-/*
-export class Resolve {
-}
-*/
 import { Injectable } from '@angular/core';
 import {Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from './api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 export interface EndpointComponent {
     endpoint: string;
@@ -14,27 +11,30 @@ export interface EndpointComponent {
 @Injectable()
 export class Resolveservice implements Resolve<EndpointComponent> {
 
-    constructor(private _apiService: ApiService, private router: Router) {}
+    constructor(private _apiService: ApiService, private router: Router, private cookieService: CookieService) {}
+
+
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        // let id = route.params['id'];
-        console.log('resolve route data');
-        console.log(route.data);
-        console.log(state);
-        // let endpoint = route.data.object;
-        // console.log('endpoint!!!!!');
-        // console.log(endpoint);
-        return new Promise((resolve) => {
-            this._apiService.getEndpoint(route.data).subscribe(api_object => {
+         return new Promise((resolve) => {
+            let endpointdata:any;
+            if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqu_userlist_view') {
+                let condition: any;
+                condition = {source: "joqu_userlist_view"};
+                endpointdata = {source: route.data.source, condition: condition}
+            }
+            else {
+                endpointdata = route.data;
+            }
+            this._apiService.getEndpoint(endpointdata).subscribe(api_object => {
                 console.log('api_object  !!!!');
                 console.log(api_object);
                 if (api_object) {
                     return resolve(api_object);
-                } else { // id not found
+                } else {
                     this.router.navigateByUrl('login');
                     return true;
                 }
             });
-
         });
     }
 }
