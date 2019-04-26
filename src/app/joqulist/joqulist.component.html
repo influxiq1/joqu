@@ -1,4 +1,5 @@
 <app-main-nav>
+    <mat-toolbar> Applied for shout &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
 <lib-listing    *ngIf="joquuserlist!=null && joquuserlist.length>0"
                 [datasource]="joquuserlist"
@@ -7,6 +8,7 @@
                 [apiurl]="apiservice.domain"
                 [jwttoken]="apiservice.jwttoken"
                 [statusarr]="joquuserlist_statusarray"
+                [editroute]="editroute1"
               >
 </lib-listing>
   </div>

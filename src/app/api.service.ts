@@ -45,11 +45,24 @@ export class ApiService {
       })
     };
     let condition:any=endpoint.condition;
+    console.log(condition);
     var result = this._http.post(this._url + endpoint.source, condition, httpOptions).pipe(map(res => res));
-    console.log(result)
+    console.log(result);
     return result;
   }
-
+  getEndpointforedit(endpoint: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'access-token': this.cookieService.get('jwttoken')
+      })
+    };
+    let condition:any={condition: endpoint.condition,source:endpoint.source2};
+    console.log(condition);
+    var result = this._http.post(this._url + endpoint.source, condition, httpOptions).pipe(map(res => res));
+    console.log(result);
+    return result;
+  }
   getData(endpoint: any) {
 
     const httpOptions = {

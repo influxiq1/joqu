@@ -27,6 +27,7 @@ import { FormComponent } from './form/form.component';
 import { GridviewComponent } from './gridview/gridview.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { JoqulistComponent } from './joqulist/joqulist.component';
+import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { JoqulistComponent } from './joqulist/joqulist.component';
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
     JoqulistComponent,
+    JoqueditComponent,Updatetest3
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { JoqulistComponent } from './joqulist/joqulist.component';
   providers: [CookieService, Resolveservice, ApiService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
-    Dialogtest
+    Dialogtest,
+    Updatetest3
   ],
 })
 export class AppModule { }

@@ -13,6 +13,7 @@ export class JoqulistComponent implements OnInit {
   joquuserlist_skip: any= ['_id','password','instagramlink','shatterblok_user_id','city'];
   joquuserlist_modify_header1: any = { 'name': 'Full Name','email':'Email', 'age':'Age', 'dateformat':'Date','status':'Status','phone':'Phone'};
    joquuserlist_statusarray:any=[{val:2,name:'Processed by admin'},{val:3,name:'Shout A/c Created'}];
+  editroute1:any='joquedit';
 
   constructor(public router: Router,private route: ActivatedRoute, public apiservice: ApiService) {
   }

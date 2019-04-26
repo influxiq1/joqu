@@ -1,0 +1,12 @@
+<div class="custom_modal modal_wrapper">
+    <div mat-dialog-content >
+        <!--    <mat-dialog-content>user can't be verified</mat-dialog-content>-->
+        <mat-dialog-content  class="error_msg" *ngIf="modalmsg!=''">{{modalmsg}}</mat-dialog-content>
+    </div>
+    <div mat-dialog-actions class="action_btn">
+        <!--    <button mat-button (click)="onNoClick()">No Thanks</button>-->
+        <button class="cancel_button" mat-button [mat-dialog-close] cdkFocusInitial>Ok</button>
+    </div>
+
+</div>
+
