@@ -13,6 +13,7 @@ import {GridviewComponent} from './gridview/gridview.component';
 import {AdmindashboardComponent} from './admindashboard/admindashboard.component';
 import {JoqulistComponent} from './joqulist/joqulist.component';
 import {JoqueditComponent} from './joquedit/joquedit.component';
+import {AddgameComponent} from "./addgame/addgame.component";
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'adminlist', component: AdminlistComponent},
   {path: 'form', component: FormComponent},
+  {path: 'addgame', component: AddgameComponent, canActivate: [AuthGuard]},
   {path: 'gridview', component: GridviewComponent},
   {path: 'joqulist', component: JoqulistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"joqu_userlist_view"}}},
   {path: 'admindashboard', component: AdmindashboardComponent, canActivate: [AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},

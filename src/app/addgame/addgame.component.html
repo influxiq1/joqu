@@ -1,0 +1,40 @@
+<mat-card class="form_wrapper">
+  <mat-card-header class="logo_wrapper_login">
+    <img src="../../assets/images/joqulogo.png">
+  </mat-card-header>
+  <div class="example-container add_form" [formGroup]="myForm">
+    <mat-form-field>
+      <input matInput placeholder="Game Name" [formControl]="myForm.controls['gamename']" (blur)="clearfun('gamename')">
+      <mat-error  *ngIf="!myForm.controls['gamename'].valid && myForm.controls['gamename'].touched">This field can not be blank</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Game Description" [formControl]="myForm.controls['gamedescription']" (blur)="clearfun('gamedescription')"></textarea>
+      <mat-error  *ngIf="!myForm.controls['gamedescription'].valid && myForm.controls['gamedescription'].touched">This field can not be blank</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+   <!--   <input matInput placeholder="Input">-->
+
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-select placeholder="Select">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button class="form_add_button"><i class="material-icons">
+      add
+    </i> Add  </button>
+
+
+  </div>
+</mat-card>

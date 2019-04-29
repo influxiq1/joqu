@@ -38,6 +38,7 @@ const DATA:Mylist[]=[
 
 export class AdminlistComponent implements OnInit {
 
+  public isMobile;
   displayedColumns: string[] = ['id', 'name', 'age', 'address', 'phone', 'status', 'actions'];
   // dataSource = DATA;
   dataSource = new MatTableDataSource<Mylist>(DATA);

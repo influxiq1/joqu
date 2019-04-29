@@ -28,6 +28,7 @@ import { GridviewComponent } from './gridview/gridview.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { JoqulistComponent } from './joqulist/joqulist.component';
 import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
+import { AddgameComponent } from './addgame/addgame.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
     JoqulistComponent,
-    JoqueditComponent,Updatetest3
+    JoqueditComponent,Updatetest3, AddgameComponent
   ],
   imports: [
     BrowserModule,
