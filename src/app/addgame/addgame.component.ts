@@ -21,7 +21,7 @@ export class AddgameComponent implements OnInit {
     this.myForm = this.fb.group({
       gamename: ['', Validators.required],
       gamedescription: ['', Validators.required],
-      dt: ['', Validators.required],
+      st_dt: ['', Validators.required],
       enddt: ['', Validators.required],
       min_pay_of_amount: ['', Validators.required],
       max_pay_of_amount: ['', Validators.required],
