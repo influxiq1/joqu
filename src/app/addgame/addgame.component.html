@@ -12,29 +12,42 @@
       <textarea matInput placeholder="Game Description" [formControl]="myForm.controls['gamedescription']" (blur)="clearfun('gamedescription')"></textarea>
       <mat-error  *ngIf="!myForm.controls['gamedescription'].valid && myForm.controls['gamedescription'].touched">This field can not be blank</mat-error>
     </mat-form-field>
-    <mat-form-field>
-   <!--   <input matInput placeholder="Input">-->
-
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput [matDatepicker]="picker" [formControl]="myForm.controls['dt']" placeholder="Choose a Start date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-
 
     <mat-form-field>
-      <mat-select placeholder="Select">
-        <mat-option value="option">Option</mat-option>
-      </mat-select>
+      <input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" >
+      <ngx-material-timepicker #tmpicker></ngx-material-timepicker>
     </mat-form-field>
 
-    <button mat-raised-button class="form_add_button"><i class="material-icons">
+    <mat-form-field>
+      <input matInput [matDatepicker]="endpicker" [formControl]="myForm.controls['enddt']" placeholder="Choose a End date">
+      <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+      <mat-datepicker #endpicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [ngxTimepicker]="endtmpicker" [formControl]="myForm.controls['end_tm']" placeholder="Choose an End time" >
+      <ngx-material-timepicker #endtmpicker></ngx-material-timepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Minimum Payout Amount *" [formControl]="myForm.controls['min_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
+      <mat-error  *ngIf="!myForm.controls['min_pay_of_amount'].valid && myForm.controls['min_pay_of_amount'].touched">This field can not be blank</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Maximum Payout Amount *" [formControl]="myForm.controls['max_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
+      <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button class="form_add_button" (click)="onSubmit()"><i class="material-icons">
       add
     </i> Add  </button>
-
 
   </div>
 </mat-card>

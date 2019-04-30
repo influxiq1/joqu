@@ -29,6 +29,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { JoqulistComponent } from './joqulist/joqulist.component';
 import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
 import { AddgameComponent } from './addgame/addgame.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddgameComponent } from './addgame/addgame.component';
     HttpClientModule,
     LayoutModule,
     DemoMaterialModule,
-    ListingModule
+    ListingModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [CookieService, Resolveservice, ApiService, AuthGuard],
   bootstrap: [AppComponent],
