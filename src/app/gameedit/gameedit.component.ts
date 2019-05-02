@@ -4,7 +4,7 @@ import { Router, ActivatedRoute,NavigationEnd } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from "../api.service";
 import {CookieService} from "ngx-cookie-service";
-
+declare var moment;
 @Component({
   selector: 'app-gameedit',
   templateUrl: './gameedit.component.html',
@@ -46,14 +46,15 @@ export class GameeditComponent implements OnInit {
       console.log('=============');
       // console.log(moment(data['results'].res[0].st_dt).format('YYYY-MM-DD HH:mm'));
       // console.log(moment(data['results'].res[0].st_dt).toDate().toString());
-      console.log(this.modeldata.enddt);
-      console.log(moment(this.modeldata.enddt).toDate().toString());
+      console.log(moment(data['results'].res[0].st_dt).toISOString());
+      // console.log(this.modeldata.st_dt);
+      // console.log(moment(this.modeldata.st_dt).toDate().toString());
       this.myForm = this.fb.group({
         id: [this.modeldata._id],
         gamename: [this.modeldata.gamename, Validators.required],
         gamedescription: [this.modeldata.gamedescription, Validators.required],
-        st_dt: [moment(this.modeldata.st_dt).toDate().toString(), Validators.required],
-        enddt: [moment(this.modeldata.enddt).toDate().toString(), Validators.required],
+        st_dt: [moment(data['results'].res[0].st_dt).toISOString(), Validators.required],
+        enddt: [moment(data['results'].res[0].enddt).toISOString(), Validators.required],
         min_pay_of_amount: [this.modeldata.min_pay_of_amount, Validators.required],
         max_pay_of_amount: [this.modeldata.max_pay_of_amount, Validators.required],
         st_tm: [this.modeldata.st_tm, Validators.required],

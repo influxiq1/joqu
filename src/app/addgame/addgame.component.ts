@@ -31,8 +31,10 @@ export class AddgameComponent implements OnInit {
   onSubmit() {
     console.log(this.myForm.value['st_dt']);
     console.log(moment(this.myForm.value['st_dt']).format('YYYY-MM-DD HH:mm'));
+
     let x: any;
     let data = this.myForm.value;
+    console.log(data);
     let data1 = {data: data,source:'game'};
     for (x in this.myForm.controls) {
       this.myForm.controls[x].markAsTouched();
