@@ -30,6 +30,8 @@ import { JoqulistComponent } from './joqulist/joqulist.component';
 import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
 import { AddgameComponent } from './addgame/addgame.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { GamelistComponent } from './gamelist/gamelist.component';
+import { GameeditComponent } from './gameedit/gameedit.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
     JoqulistComponent,
-    JoqueditComponent,Updatetest3, AddgameComponent
+    JoqueditComponent,Updatetest3, AddgameComponent, GamelistComponent, GameeditComponent
   ],
   imports: [
     BrowserModule,

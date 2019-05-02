@@ -17,15 +17,20 @@ export class Resolveservice implements Resolve<EndpointComponent> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return new Promise((resolve) => {
             let endpointdata:any;
-            if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqu_userlist_view') {
+            if((route.data.condition!=null && route.data.condition.myid !=null) && (route.data.condition.myid=='joqu_userlist_view' || route.data.condition.myid=='game_view')) {
                 let condition: any;
-                condition = {source: "joqu_userlist_view"};
+                condition = {source: route.data.condition.myid};
                 endpointdata = {source: route.data.source, condition: condition}
             }
             else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqueditid') {
                 let condition: any;
                 condition = {_id:route.params.pagename};
                 endpointdata = {source: route.data.source, source2: "users",condition: condition};
+            }
+            else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='gameeditid') {
+                let condition: any;
+                condition = {_id:route.params.pagename};
+                endpointdata = {source: route.data.source, source2: "game",condition: condition};
             }
             else {
                 endpointdata = route.data;

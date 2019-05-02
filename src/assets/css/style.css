@@ -114,10 +114,12 @@ font-family: 'Noteworthy';
 
 /*---Loader css ---*/
 
+
+
 .loader{border:16px solid #080009;border-top:16px solid #4a86e8;border-radius:50%;width:120px;height:120px;animation:spin 2s linear infinite;margin:0 auto;}
 @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 
-
+.innerloder{ width:120px; margin:0 auto; }
 
 
 .s_getmyoffer {
@@ -402,9 +404,11 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
 /*add form*/
 .form_wrapper{
     width: 700px;
-    margin: 0 auto;
+    margin: 40px auto;
     border: 4px solid #050e1d;
     padding: 30px 20px!important;
+    height: 100%;
+    overflow: auto;
 }
 .add_form {
     display: flex;
@@ -415,13 +419,25 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     width: 100%;
 }
 
-.form_wrapper .form_add_button{
-    background: #050e1d;
+.form_wrapper .form_add_button {
+    background: #050e1d !important;
     width: 50%;
     color: #fff;
-    margin: 0 auto!important;
+    margin: 20px auto !important;
     padding: 10px 0;
     font-size: 24px;
-    margin-top: 30px!important;
 }
 .form_wrapper .form_add_button i{font-size: 34px!important;}
+
+/*GAME LIST*/
+.game_list_header {background: #ebebeb !important; padding: 10px!important; border-bottom: 1px solid #4a86e8;}
+
+
+.ngx-material-timepicker-face .clock-face__number--outer[_ngcontent-mca-c18] {
+    width: calc(180px / 2 - 20px)!important;
+    height: calc(180px / 2 - 20px)!important;
+}
+.ngx-material-timepicker-face.clock-face[_ngcontent-nnq-c18] {
+    width: 180px!important;
+    height: 180px!important;
+}

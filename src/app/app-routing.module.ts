@@ -14,10 +14,11 @@ import {AdmindashboardComponent} from './admindashboard/admindashboard.component
 import {JoqulistComponent} from './joqulist/joqulist.component';
 import {JoqueditComponent} from './joquedit/joquedit.component';
 import {AddgameComponent} from "./addgame/addgame.component";
+import {GameeditComponent} from "./gameedit/gameedit.component";
+import {GamelistComponent} from "./gamelist/gamelist.component";
 
 
 const routes: Routes = [
-    /* { path: 'changepassword', component: ChangepasswordComponent, canActivate: [AuthGuard], resolve: {results: Resolveservice}, data: {source: 'users', condition:{}} },*/
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'forgetpassword', component: ForgetpasswordComponent},
@@ -25,14 +26,13 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'adminlist', component: AdminlistComponent},
   {path: 'form', component: FormComponent},
-  {path: 'addgame', component: AddgameComponent, canActivate: [AuthGuard]},
   {path: 'gridview', component: GridviewComponent},
   {path: 'joqulist', component: JoqulistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"joqu_userlist_view"}}},
   {path: 'admindashboard', component: AdmindashboardComponent, canActivate: [AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},
-  // {path: 'joquedit', component: JoqueditComponent},
-  // {path: 'joquedit/:pagename', component: JoqueditComponent },
-  // {path: 'joquedit', component: JoqueditComponent, canActivate:[AuthGuard]},
   {path: 'joquedit/:pagename', component: JoqueditComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: "datalist",edit:'1', condition: {myid:"joqueditid"}}},
+  {path: 'addgame', component: AddgameComponent, canActivate: [AuthGuard]},
+  {path: 'gamelist', component: GamelistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"game_view"}}},
+  {path: 'gameedit/:pagename', component: GameeditComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: "datalist",edit:'1', condition: {myid:"gameeditid"}}},
 ];
 
 @NgModule({

@@ -1,0 +1,15 @@
+<app-main-nav>
+  <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
+  <div class="mat-elevation-z8">
+    <lib-listing    *ngIf="gamelist!=null && gamelist.length>0"
+                    [datasource]="gamelist"
+                    [skip]="gamelist_skip"
+                    [modify_header_array]="gamelist_modify_header"
+                    [apiurl]="apiservice.domain"
+                    [jwttoken]="apiservice.jwttoken"
+                    [editroute]="editroute1"
+    >
+      <!--[statusarr]="gamelist_statusarray"-->
+    </lib-listing>
+  </div>
+</app-main-nav>

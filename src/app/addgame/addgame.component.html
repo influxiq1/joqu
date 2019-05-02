@@ -1,3 +1,5 @@
+<app-main-nav>
+  <mat-toolbar class="game_list_header"> Add Game&nbsp;&nbsp;</mat-toolbar>
 <mat-card class="form_wrapper">
   <mat-card-header class="logo_wrapper_login">
     <img src="../../assets/images/joqulogo.png">
@@ -21,7 +23,7 @@
 
     <mat-form-field>
       <input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" >
-      <ngx-material-timepicker #tmpicker></ngx-material-timepicker>
+      <ngx-material-timepicker #tmpicker ></ngx-material-timepicker>
     </mat-form-field>
 
     <mat-form-field>
@@ -44,10 +46,11 @@
       <input matInput placeholder="Maximum Payout Amount *" [formControl]="myForm.controls['max_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
       <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
-
-    <button mat-raised-button class="form_add_button" (click)="onSubmit()"><i class="material-icons">
+    <button mat-raised-button color="primary" class="form_add_button" (click)="onSubmit()"><i class="material-icons">
       add
     </i> Add  </button>
 
   </div>
 </mat-card>
+
+</app-main-nav>

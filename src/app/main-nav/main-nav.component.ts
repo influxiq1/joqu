@@ -16,6 +16,9 @@ export class MainNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,public cookieService: CookieService) {}
+  constructor(private breakpointObserver: BreakpointObserver,public cookieService: CookieService) {
+    console.log('type');
+    console.log(this.cookieService.get('type'));
+  }
 
 }

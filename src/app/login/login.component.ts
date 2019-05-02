@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
       this.result = this.apiService.postlogin(this.endpoint, data).subscribe(res => {
           let result: any = {};
           result = res;
+          console.log('result========');
+          console.log(result);
           if (result.status == 'error') {
             this.errormg = result.msg;
           }
@@ -63,7 +65,7 @@ export class LoginComponent implements OnInit {
             this.cookieService.set('id', result.item._id);
             this.cookieService.set('jwttoken', result.token);
             this.cookieService.set('type', result.item.type);
-            this.router.navigate(['/admindashboard']);
+            this.router.navigate(['/joqulist']);
           }
         }, error => {
           console.log('Oooops!');
