@@ -22,8 +22,13 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" [format]="24" [disabled]="true">
-      <ngx-material-timepicker #tmpicker ></ngx-material-timepicker>
+      <!--<input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" [format]="24" [disableClick]="true" [ngxMaterialTimepickerTheme]="darkTheme">-->
+      <!--<div class="toggle-example">-->
+        <input matInput [ngxTimepicker]="tmpicker" [disableClick]="true" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" [ngxMaterialTimepickerTheme]="darkTheme" readonly>
+        <ngx-material-timepicker-toggle [for]="tmpicker"></ngx-material-timepicker-toggle>
+        <ngx-material-timepicker #tmpicker></ngx-material-timepicker>
+      <!--</div>-->
+      <!--<ngx-material-timepicker #tmpicker ></ngx-material-timepicker>-->
     </mat-form-field>
 
     <mat-form-field>

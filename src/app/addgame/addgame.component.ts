@@ -58,4 +58,23 @@ export class AddgameComponent implements OnInit {
   clearfun(val) {
     this.myForm.controls[val].markAsUntouched();
   }
+
+
+  // https://agranom.github.io/ngx-material-timepicker/
+
+  
+/*  darkTheme: NgxMaterialTimepickerTheme = {
+    container: {
+      bodyBackgroundColor: '#424242',
+      buttonColor: '#fff'
+    },
+    dial: {
+      dialBackgroundColor: '#555',
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#555',
+      clockHandColor: '#9fbd90',
+      clockFaceTimeInactiveColor: '#fff'
+    }
+  };*/
 }
