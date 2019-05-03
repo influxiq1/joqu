@@ -25,7 +25,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" >
+        <input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time"  readonly >
+        <ngx-material-timepicker-toggle [for]="tmpicker"></ngx-material-timepicker-toggle>
         <ngx-material-timepicker #tmpicker ></ngx-material-timepicker>
       </mat-form-field>
 
@@ -36,7 +37,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [ngxTimepicker]="endtmpicker" [formControl]="myForm.controls['end_tm']" placeholder="Choose an End time" >
+        <input matInput [ngxTimepicker]="endtmpicker" [formControl]="myForm.controls['end_tm']" placeholder="Choose an End time" readonly >
+        <ngx-material-timepicker-toggle [for]="endtmpicker"></ngx-material-timepicker-toggle>
         <ngx-material-timepicker #endtmpicker></ngx-material-timepicker>
       </mat-form-field>
 

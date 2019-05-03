@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRouteSnapshot, Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../../app/api.service';
+// import { environment } from '../../environments/environment';
 declare var moment:any;
 @Component({
   selector: 'app-addgame',
@@ -12,6 +13,9 @@ declare var moment:any;
 export class AddgameComponent implements OnInit {
   public endpoint = 'addorupdatedata';
   public myForm: any;
+  // public imageuploadpath: any = environment.uploadfolder;
+  // public imagefilepath: any = environment.imagefilepath;
+  // public uploader: any = 'upload';
 
   constructor(public fb: FormBuilder, private cookieService: CookieService, public apiService: ApiService, public router: Router ) {
   }

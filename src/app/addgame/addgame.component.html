@@ -24,7 +24,7 @@
     <mat-form-field>
       <!--<input matInput [ngxTimepicker]="tmpicker" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" [format]="24" [disableClick]="true" [ngxMaterialTimepickerTheme]="darkTheme">-->
       <!--<div class="toggle-example">-->
-        <input matInput [ngxTimepicker]="tmpicker" [disableClick]="true" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" [ngxMaterialTimepickerTheme]="darkTheme" readonly>
+        <input matInput [ngxTimepicker]="tmpicker" [disableClick]="true" [formControl]="myForm.controls['st_tm']" placeholder="Choose a Start time" readonly>
         <ngx-material-timepicker-toggle [for]="tmpicker"></ngx-material-timepicker-toggle>
         <ngx-material-timepicker #tmpicker></ngx-material-timepicker>
       <!--</div>-->
@@ -38,7 +38,8 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [ngxTimepicker]="endtmpicker" [formControl]="myForm.controls['end_tm']" placeholder="Choose an End time" >
+      <input matInput [ngxTimepicker]="endtmpicker" [formControl]="myForm.controls['end_tm']" placeholder="Choose an End time" readonly>
+      <ngx-material-timepicker-toggle [for]="endtmpicker"></ngx-material-timepicker-toggle>
       <ngx-material-timepicker #endtmpicker></ngx-material-timepicker>
     </mat-form-field>
 
@@ -51,6 +52,10 @@
       <input matInput placeholder="Maximum Payout Amount *" [formControl]="myForm.controls['max_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
       <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
+
+   <!-- <mat-form-field>
+      <app-uploader uploadtype="multiple" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" ></app-uploader>
+    </mat-form-field>-->
     <button mat-raised-button color="primary" class="form_add_button" (click)="onSubmit()"><i class="material-icons">
       add
     </i> Add  </button>
