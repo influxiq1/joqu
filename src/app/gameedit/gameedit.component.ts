@@ -82,6 +82,8 @@ export class GameeditComponent implements OnInit {
   onSubmit() {
     let x: any;
     let data = this.myForm.value;
+    data.st_dt=new Date(this.myForm.value['st_dt']).getTime();
+    data.enddt=new Date(this.myForm.value['enddt']).getTime();
     let data1 = {data: data,source:'game'};
     for (x in this.myForm.controls) {
       this.myForm.controls[x].markAsTouched();

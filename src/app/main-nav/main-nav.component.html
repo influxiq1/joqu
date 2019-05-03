@@ -9,12 +9,12 @@
         </span>
     </mat-toolbar>
     <mat-nav-list>
-    <!--  <a mat-list-item routerLink="/dashboard" >Dashboard</a>
-      <a mat-list-item routerLink="/adminlist">Admin List</a>
-      <a mat-list-item routerLink="#">User List</a>
-      <a mat-list-item routerLink="#">User Management</a>
-      <a mat-list-item routerLink="#">Brand Management</a>
-      <a mat-list-item routerLink="#">Products List</a>-->
+     <a mat-list-item [routerLink]="['/admindashboard']" >Dashboard</a>
+      <!--   <a mat-list-item routerLink="/adminlist">Admin List</a>
+        <a mat-list-item routerLink="#">User List</a>
+        <a mat-list-item routerLink="#">User Management</a>
+        <a mat-list-item routerLink="#">Brand Management</a>
+        <a mat-list-item routerLink="#">Products List</a>-->
       <a mat-list-item [routerLink]="['/addgame']" *ngIf="cookieService.get('type')=='admin'">Add Game</a>
       <a mat-list-item [routerLink]="['/joqulist']">Joqu List</a>
       <a mat-list-item [routerLink]="['/gamelist']">Game List</a>

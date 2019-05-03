@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
             this.cookieService.set('id', result.item._id);
             this.cookieService.set('jwttoken', result.token);
             this.cookieService.set('type', result.item.type);
-            this.router.navigate(['/joqulist']);
+            this.router.navigate(['/admindashboard']);
           }
         }, error => {
           console.log('Oooops!');

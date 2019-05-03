@@ -1,12 +1,32 @@
 <app-main-nav>
 
-  <mat-toolbar  class="breadcrumb toolbar_padding"> <a style="text-decoration: none;" href=""> User Table &nbsp;/&nbsp; </a> Panding model application </mat-toolbar>
+  <mat-toolbar class="game_list_header"> Applied for shout &nbsp;&nbsp;</mat-toolbar>
+  <div class="mat-elevation-z8">
+    <lib-listing    *ngIf="joqu_userlist_view!=null && joqu_userlist_view.length>0"
+                    [datasource]="joqu_userlist_view"
+                    [skip]="joqu_userlist_view_skip"
+                    [modify_header_array]="joqu_userlist_view_modify_header"
+                    [apiurl]="apiservice.domain"
+                    [jwttoken]="apiservice.jwttoken"
+                    [statusarr]="joqu_userlist_view_statusarray"
+                    [editroute]="joqu_userlist_view_editroute1"
+    >
+    </lib-listing>
+  </div>
 
-  <lib-listing *ngIf="pendingmodelapplicationarray1!=null && notpendingapplication_view.length>0"  [datasource]="pendingmodelapplicationarray1" [skip]="pendingmodelapplicationarray_skip1" [modify_header_array]="pendingmodelapplicationarray_modify_header1" ></lib-listing>
 
-<!--
-  <mat-toolbar class="breadcrumb"> <a style="text-decoration: none;" href=""> User Table &nbsp;/&nbsp; </a> User List</mat-toolbar>
+  <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
+  <div class="mat-elevation-z8">
+    <lib-listing    *ngIf="game_view!=null && game_view.length>0"
+                    [datasource]="game_view"
+                    [skip]="game_view_skip"
+                    [modify_header_array]="game_view_modify_header"
+                    [apiurl]="apiservice.domain"
+                    [jwttoken]="apiservice.jwttoken"
+                    [editroute]="game_view_editroute1"
+    >
+    </lib-listing>
+  </div>
 
 
-  <lib-listing *ngIf="pendingmodelapplicationarray!=null && pendingmodelapplicationarray.length>0"  [datasource]="pendingmodelapplicationarray" [skip]="pendingmodelapplicationarray_skip" [modify_header_array]="pendingmodelapplicationarray_modify_header" ></lib-listing>-->
 </app-main-nav>
