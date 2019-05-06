@@ -1,0 +1,38 @@
+
+
+<div class="uploadsection">
+  <input style="display: none" type="file" accept="*" ngFileSelect [options]="apiService.options" (uploadOutput)="apiService.onUploadOutput($event,filenamevalc,uploadtypec,uploadpathc)"  [uploadInput]="apiService.uploadInput" #fileInput1 >
+   <div class="progressnew">
+     <!--  <progressbar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]" [type]="type">{{apiService.progress[filenamevalc]}}% </progressbar>-->
+       <mat-progress-bar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]">{{apiService.progress[filenamevalc]}}%</mat-progress-bar>
+   </div>
+  <h3 *ngIf="nameis" style="color: white;" >upload file:</h3> <button *ngIf="apiService.inprogress==null" (click)="fileInput1.click()" type="button" class="uploadfile">upload</button>
+
+
+</div>
+
+<div class="uploadsection_wrapper">
+    <span class="uploadthum" *ngIf="apiService.fileservername!=null && apiService.fileservername[filenamevalc]!=null && apiService.fileservername[filenamevalc].length>0">
+                  <span class="uploadthumimgbox" *ngFor="let img of apiService.fileservername[filenamevalc] ;let i=index;">
+
+                      <span class="uploadthumimgbox_span">
+                    <img  src="{{filepathc}}/{{img}}" >
+                    <button class="closepic" (click)="delimage(i)">Delete</button>
+
+                    <button class="setpic" mat-raised-button
+                            matTooltip="Set as Profile Picture" (click)="setprofilepictureimage(img)" type="button" [ngClass]="img==profileimg ? 'setpic_active' : ''">
+                  </button>
+
+                            <button class="setpic3" mat-raised-button
+                                    matTooltip="Set as Second Picture" (click)="setsecndpictureimage(img)" type="button" [ngClass]="img==secondimg ? 'setpic_active' : ''">
+                  </button>
+                          </span>
+
+
+                  </span>
+                </span>
+
+
+</div>
+
+<div *ngIf="apiService.uploaderror!='' " class="error" style="color: white;"> {{apiService.uploaderror}}</div>
