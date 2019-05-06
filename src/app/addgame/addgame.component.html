@@ -48,14 +48,16 @@
       <mat-error  *ngIf="!myForm.controls['min_pay_of_amount'].valid && myForm.controls['min_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
 
+    <div class="form-group col-xs-12">
+      <app-uploader uploadtype="multiple" [uploadpath]="modeluploadpath" [filepath]="modelfilepath"  [filenameval]="uploader" ></app-uploader>
+    </div>
+
     <mat-form-field>
       <input matInput placeholder="Maximum Payout Amount *" [formControl]="myForm.controls['max_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
       <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
 
-   <!-- <mat-form-field>
-      <app-uploader uploadtype="multiple" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" ></app-uploader>
-    </mat-form-field>-->
+
     <button mat-raised-button color="primary" class="form_add_button" (click)="onSubmit()"><i class="material-icons">
       add
     </i> Add  </button>

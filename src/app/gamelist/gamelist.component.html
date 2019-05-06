@@ -1,3 +1,4 @@
+<!--
 <app-main-nav>
   <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
@@ -9,7 +10,70 @@
                     [jwttoken]="apiservice.jwttoken"
                     [editroute]="editroute1"
     >
-      <!--[statusarr]="gamelist_statusarray"-->
+      &lt;!&ndash;[statusarr]="gamelist_statusarray"&ndash;&gt;
     </lib-listing>
   </div>
+</app-main-nav>
+-->
+
+
+<app-main-nav>
+
+  <mat-card>
+      <mat-card-content>   <button mat-button  (click)="getgames(0)" class="s_getmyoffer_login_button"  >Past Games</button></mat-card-content>
+      <mat-card-content>   <button mat-button  (click)="getgames(1)" class="s_getmyoffer_login_button"  >Current Games</button></mat-card-content>
+      <mat-card-content>
+          <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
+      </mat-card-content>
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options1" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+
+    <mat-card-content>
+        <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
+      <br>
+      <span class="mat-elevation-z8">
+        <mat-card *ngFor="let item of gamelist">
+            <mat-card-content>
+                 <img mat-card-image src="{{apiservice.imagefilepath}}{{item.image}}">
+            </mat-card-content>
+            <mat-card-content>
+                <mat-toolbar>
+                    <mat-toolbar-row class="bck">
+                        <span>Game name: {{item.gamename}}</span>
+                     </mat-toolbar-row>
+
+                    <mat-toolbar-row class="bck">
+                        <span>Description: {{item.gamedescription}}</span>
+                     </mat-toolbar-row>
+
+                    <mat-toolbar-row class="bck">
+                           <span>Start Date: {{item.st_dt_req}}</span>
+                     </mat-toolbar-row>
+
+                    <mat-toolbar-row class="bck">
+                         <span>End Date: {{item.endt_req}}</span>
+                     </mat-toolbar-row>
+
+                    <mat-toolbar-row class="bck">
+                         <span>Start Time: {{item.st_tm}}</span>
+                     </mat-toolbar-row>
+
+                    <mat-toolbar-row class="bck">
+                        <span>End Time: {{item.end_tm}}</span>
+                     </mat-toolbar-row>
+
+                    <!--<mat-toolbar-row class="bck">
+                          <input  mat-raised-button  type="button" value="GRAB URL" color="primary" class="button_grab" ngxClipboard [cbContent]= callforcopy(item) (click)="showcopied()">
+                     </mat-toolbar-row>-->
+                </mat-toolbar>
+            </mat-card-content>
+        </mat-card>
+      </span>
+    </mat-card-content>
+
+  </mat-card>
+
 </app-main-nav>

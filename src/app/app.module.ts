@@ -32,6 +32,9 @@ import { AddgameComponent } from './addgame/addgame.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { GameeditComponent } from './gameedit/gameedit.component';
+import { UploaderComponent } from './uploader/uploader.component';
+import {NgxUploaderModule} from 'ngx-uploader';
+import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,7 @@ import { GameeditComponent } from './gameedit/gameedit.component';
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
     JoqulistComponent,
-    JoqueditComponent,Updatetest3, AddgameComponent, GamelistComponent, GameeditComponent
+    JoqueditComponent,Updatetest3, AddgameComponent, GamelistComponent, GameeditComponent,UploaderComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ import { GameeditComponent } from './gameedit/gameedit.component';
     LayoutModule,
     DemoMaterialModule,
     ListingModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    NgxUploaderModule,
+    NgxMatDrpModule
   ],
   providers: [CookieService, Resolveservice, ApiService, AuthGuard],
   bootstrap: [AppComponent],

@@ -3,7 +3,7 @@ import {Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@ang
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from './api.service';
 import { CookieService } from 'ngx-cookie-service';
-
+declare var moment:any;
 export interface EndpointComponent {
     endpoint: string;
 }
@@ -17,9 +17,19 @@ export class Resolveservice implements Resolve<EndpointComponent> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return new Promise((resolve) => {
             let endpointdata:any;
-            if((route.data.condition!=null && route.data.condition.myid !=null) && (route.data.condition.myid=='joqu_userlist_view' || route.data.condition.myid=='game_view')) {
+            if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqu_userlist_view') {
                 let condition: any;
                 condition = {source: route.data.condition.myid};
+                endpointdata = {source: route.data.source, condition: condition}
+            }
+            else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='game_view') {
+                let condition: any;
+                condition = {"source": route.data.condition.myid,condition: {
+                    "st_dt_req":{
+                        $lte: moment().add(1, 'months').format('MM/DD/YYYY'),
+                        $gt: moment().subtract(1, 'days').format('MM/DD/YYYY')
+                    }
+                }};
                 endpointdata = {source: route.data.source, condition: condition}
             }
             else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqueditid') {

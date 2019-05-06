@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRouteSnapshot, Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../../app/api.service';
-// import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 declare var moment:any;
 @Component({
   selector: 'app-addgame',
@@ -13,9 +13,9 @@ declare var moment:any;
 export class AddgameComponent implements OnInit {
   public endpoint = 'addorupdatedata';
   public myForm: any;
-  // public imageuploadpath: any = environment.uploadfolder;
-  // public imagefilepath: any = environment.imagefilepath;
-  // public uploader: any = 'upload';
+  public imageuploadpath: any = environment.uploadfolder;
+  public imagefilepath: any = environment.imagefilepath;
+  public uploader: any = 'upload';
 
   constructor(public fb: FormBuilder, private cookieService: CookieService, public apiService: ApiService, public router: Router ) {
   }
@@ -31,6 +31,7 @@ export class AddgameComponent implements OnInit {
       st_tm: ['', Validators.required],
       end_tm: ['', Validators.required]
     });
+    this.apiService.uploadtype = 'single';
   }
   onSubmit() {
     console.log(this.myForm.value['st_dt']);
@@ -39,12 +40,20 @@ export class AddgameComponent implements OnInit {
     let x: any;
     let data = this.myForm.value;
     console.log(data);
-    let data1 = {data: data,source:'game'};
+   
     for (x in this.myForm.controls) {
       this.myForm.controls[x].markAsTouched();
     }
+
+    // console.log(this.apiService.fileservername);
+    // console.log('this.apiService.fileservername[this.uploader]');
+    // console.log(this.apiService.fileservername[this.uploader]);
+    // console.log('this.apiService.profileimage');
+    // data.data.images = this.apiService.fileservername[this.uploader];
     data.st_dt=new Date(this.myForm.value['st_dt']).getTime();
     data.enddt=new Date(this.myForm.value['enddt']).getTime();
+    let data1 = {data: data,source:'game'};
+    console.log(data1);
     if (this.myForm.valid) {
       this.apiService.postData(this.endpoint, data1).subscribe(res => {
         let result: any = {};

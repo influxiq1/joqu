@@ -144,43 +144,6 @@ export class UploaderComponent implements OnInit {
   delimage(indexval:any){
     this.apiService.fileservername[this.filenamevalc].splice(indexval,1);
   }
-  setprofilepictureimage(img:any){
-    // let data={images:img,email:this.cookieService.get('email')};
-    let data={images:img,email:this.modeldataemailis};
-    this.apiService.postData(this.endpoint, data).subscribe( res => {
-      let result: any = {};
-      result = res;
-      console.log('result');
-      console.log(result);
-      if (result.msg == 'success') {
-        this.profileimg = img;
-        // show a modal for update
-        const dialogRef = this.dialog.open(Updatetest4, {
-          data: {msg: 'Profile Image Updated'},
-
-        });
-      }
-    })
-  }
-  setsecndpictureimage(img:any){
-    console.log('===========================');
-    console.log(img);
-    let data={images:img,email:this.modeldataemailis};
-    this.apiService.postData(this.endpointsecondimg, data).subscribe( res => {
-      let result: any = {};
-      result = res;
-      console.log('result');
-      console.log(result);
-      if (result.status == 'success') {
-        this.secondimg = img;
-        console.log(this.secondimg);
-        // show a modal for update
-        const dialogRef = this.dialog.open(Updatetest4, {
-          data: {msg: 'Image Updated'},
-        });
-      }
-    })
-  }
 }
 
 @Component({
