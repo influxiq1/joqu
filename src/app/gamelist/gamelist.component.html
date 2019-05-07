@@ -25,11 +25,21 @@
       <mat-card-content>
           <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
       </mat-card-content>
+
+
+
+      <mat-card-content>
+          <input type="text"  [(ngModel)]="autoval" [matAutocomplete]="auto" >
+          <button mat-button  (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
+          <button mat-button  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
+      </mat-card-content>
     <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of options1" [value]="option">
-            {{option}}
+        <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
+            {{option.gamename}}
         </mat-option>
     </mat-autocomplete>
+
+
 
     <mat-card-content>
         <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>

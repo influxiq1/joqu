@@ -17,6 +17,7 @@ export class GamelistComponent implements OnInit {
   // gamelist_statusarray:any=[{val:2,name:'Processed by admin'},{val:3,name:'Shout A/c Created'}];
   editroute1:any='gameedit';
   endpoint:any='datalist';
+  autoval:any;
   options1: string[] = ['One', 'Two', 'Three'];
 
   range:Range = {fromDate:new Date(), toDate: new Date()};
@@ -57,7 +58,30 @@ export class GamelistComponent implements OnInit {
 
   }
 
-  
+  searchusingautoval(val) {
+    console.log(this.autoval);
+    let data1;
+
+    if (val == 1) {
+      data1 = {"gamename": this.autoval};
+    }
+    else {
+      this.autoval=null;
+      data1 = {};
+    }
+
+    let data2 = {"condition": data1,source:'game_view'};
+    this.apiservice.postData(this.endpoint, data2).subscribe( res => {
+      let result:any;
+      result = res;
+      console.log(result);
+      // if(result.res.length>0){
+      this.gamelist=result.res;
+      console.log('this.gamelist');
+      console.log(this.gamelist);
+      // }
+    });
+  }
   
   getgames(val){
     console.log(val+' -val');
