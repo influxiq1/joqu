@@ -18,6 +18,9 @@
       <a mat-list-item [routerLink]="['/addgame']" *ngIf="cookieService.get('type')=='admin'">Add Game</a>
       <a mat-list-item [routerLink]="['/joqulist']">Joqu List</a>
       <a mat-list-item [routerLink]="['/gamelist']">Game List</a>
+      <a mat-list-item [routerLink]="['/usergamelist']">User Game List</a>
+      <a mat-list-item [routerLink]="['/gamecategoryadd']">Game Category</a>
+      <a mat-list-item (click)="logout()">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

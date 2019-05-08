@@ -1,4 +1,30 @@
 <app-main-nav>
+
+
+
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <!-- This is the tree node template for leaf nodes -->
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+      <!-- use a disabled button to provide padding for tree leaf -->
+      <button mat-icon-button disabled></button>
+      {{node.name}}
+    </mat-tree-node>
+    <!-- This is the tree node template for expandable nodes -->
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'toggle ' + node.name">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.name}}
+    </mat-tree-node>
+  </mat-tree>
+
+
+
+
+
   <mat-toolbar class="game_list_header"> Add Game&nbsp;&nbsp;</mat-toolbar>
 <mat-card class="form_wrapper">
   <mat-card-header class="logo_wrapper_login">
@@ -48,15 +74,16 @@
       <mat-error  *ngIf="!myForm.controls['min_pay_of_amount'].valid && myForm.controls['min_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
 
-    <div class="form-group col-xs-12">
-      <app-uploader uploadtype="multiple" [uploadpath]="modeluploadpath" [filepath]="modelfilepath"  [filenameval]="uploader" ></app-uploader>
-    </div>
-
     <mat-form-field>
       <input matInput placeholder="Maximum Payout Amount *" [formControl]="myForm.controls['max_pay_of_amount']" (blur)="clearfun('min_pay_of_amount')">
       <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
     </mat-form-field>
 
+    <div class="form-group col-xs-12">
+      <app-uploader uploadtype="multiple" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" ></app-uploader>
+    </div>
+
+    <mat-checkbox [formControl]="myForm.controls['status']">Status</mat-checkbox>
 
     <button mat-raised-button color="primary" class="form_add_button" (click)="onSubmit()"><i class="material-icons">
       add

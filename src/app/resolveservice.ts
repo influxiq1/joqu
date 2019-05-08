@@ -22,7 +22,7 @@ export class Resolveservice implements Resolve<EndpointComponent> {
                 condition = {source: route.data.condition.myid};
                 endpointdata = {source: route.data.source, condition: condition}
             }
-            else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='game_view') {
+            else if(route.data.condition!=null && route.data.condition.myid !=null && (route.data.condition.myid=='game_view' || route.data.condition.myid=='game_status_gretterthan_zero_view')) {
                 let condition: any;
                 condition = {"source": route.data.condition.myid,condition: {
                     "st_dt_req":{

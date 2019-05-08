@@ -441,3 +441,58 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     width: 180px!important;
     height: 180px!important;
 }
+
+
+/*AFFLIATE BANNER SECTION*/
+
+.affiliateBanner_wrapper .afbanner_content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.affiliateBanner_wrapper .afbanner_content .mat-card .mat-card-image:nth-child(1){margin: 0!important;}
+.affiliateBanner_wrapper .afbanner_content .mat-card{
+    width: 32.7%;
+    padding: 0!important;
+    margin-bottom: 1%!important;
+}
+.example-icon{
+    padding: 0 16px;
+}
+.inner_mat img{
+    width: 100%;
+    margin: 0 auto;
+}
+.action
+{
+    display: flex!important;
+    flex-wrap: wrap;
+    width: 100%!important;
+    justify-content: space-around!important;
+    margin: 0 auto!important;
+    background: #410147!important;
+    align-items: center;
+    margin-top: -4px!important;
+}
+.action .mat-icon{
+    background: #fff;
+    padding: 6px;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+}
+.action .mat-icon:nth-child(1){background: #faa318; color: #fff;}
+.action .mat-icon:nth-child(2){background: #385fac; color: #fff;}
+.action .mat-icon:nth-child(3){background: #1da1f2; color: #fff;}
+.action .mat-icon:nth-child(4){background: #0170ad; color: #fff;}
+.mat-icon .fab {
+    padding-left: 3px;
+}
+.button_grab{
+    background: rgb(250, 163, 24)!important;
+    width: 105px!important;
+    line-height: 40px!important;
+    text-transform: uppercase;     border: none!important; cursor: pointer;
+}

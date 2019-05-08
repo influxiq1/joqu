@@ -1,0 +1,129 @@
+
+<app-main-nav>
+
+  <!-- <mat-card>
+       <mat-card-content>   <button mat-button  (click)="getgames(0)" class="s_getmyoffer_login_button"  >Past Games</button></mat-card-content>
+       <mat-card-content>   <button mat-button  (click)="getgames(1)" class="s_getmyoffer_login_button"  >Current Games</button></mat-card-content>
+       <mat-card-content>
+           <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
+       </mat-card-content>
+
+
+
+       <mat-card-content>
+           <input type="text"  [(ngModel)]="autoval" [matAutocomplete]="auto" >
+           <button mat-button  (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
+           <button mat-button  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
+       </mat-card-content>
+     <mat-autocomplete #auto="matAutocomplete">
+         <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
+             {{option.gamename}}
+         </mat-option>
+     </mat-autocomplete>
+
+
+
+     <mat-card-content>
+         <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
+       <br>
+       <span class="mat-elevation-z8">
+         <mat-card *ngFor="let item of gamelist">
+             <mat-card-content *ngFor="let img of item.images">
+                  <img mat-card-image src="{{apiservice.imagefilepath}}/{{img}}">
+             </mat-card-content>
+             <mat-card-content>
+                 <mat-toolbar>
+                     <mat-toolbar-row class="bck">
+                         <span>Game name: {{item.gamename}}</span>
+                      </mat-toolbar-row>
+
+                     <mat-toolbar-row class="bck">
+                         <span>Description: {{item.gamedescription}}</span>
+                      </mat-toolbar-row>
+
+                     <mat-toolbar-row class="bck">
+                            <span>Start Date: {{item.st_dt_req}}</span>
+                      </mat-toolbar-row>
+
+                     <mat-toolbar-row class="bck">
+                          <span>End Date: {{item.endt_req}}</span>
+                      </mat-toolbar-row>
+
+                     <mat-toolbar-row class="bck">
+                          <span>Start Time: {{item.st_tm}}</span>
+                      </mat-toolbar-row>
+
+                     <mat-toolbar-row class="bck">
+                         <span>End Time: {{item.end_tm}}</span>
+                      </mat-toolbar-row>
+
+                     &lt;!&ndash;<mat-toolbar-row class="bck">
+                           <input  mat-raised-button  type="button" value="GRAB URL" color="primary" class="button_grab" ngxClipboard [cbContent]= callforcopy(item) (click)="showcopied()">
+                      </mat-toolbar-row>&ndash;&gt;
+                 </mat-toolbar>
+             </mat-card-content>
+         </mat-card>
+       </span>
+     </mat-card-content>
+
+   </mat-card>-->
+
+
+
+  <mat-card-content>   <button mat-button  (click)="getgames(0)" class="s_getmyoffer_login_button"  >Past Games</button></mat-card-content>
+  <mat-card-content>   <button mat-button  (click)="getgames(1)" class="s_getmyoffer_login_button"  >Current Games</button></mat-card-content>
+  <mat-card-content>
+    <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
+  </mat-card-content>
+  <mat-card-content>
+    <input type="text"  [(ngModel)]="autoval" [matAutocomplete]="auto" >
+    <button mat-button  (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
+    <button mat-button  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
+  </mat-card-content>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
+      {{option.gamename}}
+    </mat-option>
+  </mat-autocomplete>
+
+
+
+
+  <mat-card class="inner_mat" *ngIf="gamelist==null || gamelist.length==0">No records found</mat-card>
+
+  <mat-card class="inner_mat" *ngFor="let item of gamelist">
+    <mat-card-content class="mat-card-imagecontain">
+      <mat-card-content *ngFor="let img of item.images">
+        <img mat-card-image src="{{apiservice.imagefilepath}}/{{img}}">
+      </mat-card-content>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-toolbar  class="action">
+        <mat-toolbar-row>
+          <span>Game name: {{item.gamename}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+          <span>Description: {{item.gamedescription}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+          <span>Start Date: {{item.st_dt_req}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+          <span>End Date: {{item.endt_req}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+          <span>Start Time: {{item.st_tm}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+          <span>End Time: {{item.end_tm}}</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </mat-card-content>
+  </mat-card>
+
+</app-main-nav>

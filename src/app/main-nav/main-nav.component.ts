@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-nav',
@@ -16,9 +17,12 @@ export class MainNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,public cookieService: CookieService) {
+  constructor(private breakpointObserver: BreakpointObserver,public cookieService: CookieService, public router:Router) {
     console.log('type');
     console.log(this.cookieService.get('type'));
   }
-
+  logout(){
+    this.cookieService.deleteAll('/');
+    this.router.navigate(['/']);
+  }
 }

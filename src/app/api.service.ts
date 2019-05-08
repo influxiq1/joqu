@@ -13,6 +13,9 @@ export class ApiService {
   public _url = environment["API_URL"];
   public resetpassword = environment['resetpaswordurl'];
   public domain_for_fileupload = environment['domain_for_fileupload'];
+  public imageuploadpath: any = environment.uploadfolder;
+  public imagefilepath: any = environment.imagefilepath;
+  // public uplodeimg_url: any = environment.uplodeimg_url;
   public jwttoken: any;
 
 

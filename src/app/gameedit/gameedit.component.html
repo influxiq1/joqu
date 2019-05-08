@@ -52,6 +52,14 @@
         <mat-error  *ngIf="!myForm.controls['max_pay_of_amount'].valid && myForm.controls['max_pay_of_amount'].touched">This field can not be blank</mat-error>
       </mat-form-field>
 
+
+      <div class="form-group col-xs-12">
+      <app-uploader uploadtype="single" [uploadedimages]="gamedataimages" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" *ngIf="modeldata"></app-uploader>
+      </div>
+
+      <mat-checkbox [formControl]="myForm.controls['status']">Status</mat-checkbox>
+
+
       <button mat-raised-button class="form_add_button" (click)="onSubmit()"><i class="material-icons"></i> Update</button>
 
     </div>

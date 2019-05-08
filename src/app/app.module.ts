@@ -28,13 +28,16 @@ import { GridviewComponent } from './gridview/gridview.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { JoqulistComponent } from './joqulist/joqulist.component';
 import { JoqueditComponent,Updatetest3 } from './joquedit/joquedit.component';
-import { AddgameComponent } from './addgame/addgame.component';
+import { AddgameComponent,Updatetest1 } from './addgame/addgame.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { GameeditComponent } from './gameedit/gameedit.component';
 import { UploaderComponent } from './uploader/uploader.component';
 import {NgxUploaderModule} from 'ngx-uploader';
 import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
+import { UsergamelistComponent } from './usergamelist/usergamelist.component';
+import { GamecategoryaddComponent } from './gamecategoryadd/gamecategoryadd.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
     ResetpasswordComponent,
      Dialogtest, MainNavComponent, DashboardComponent, AdminlistComponent, FormComponent, GridviewComponent, AdmindashboardComponent,
     JoqulistComponent,
-    JoqueditComponent,Updatetest3, AddgameComponent, GamelistComponent, GameeditComponent,UploaderComponent
+    JoqueditComponent,Updatetest3,
+    AddgameComponent,Updatetest1,
+    GamelistComponent, GameeditComponent,UploaderComponent, UsergamelistComponent, GamecategoryaddComponent, TestComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,8 @@ import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
   bootstrap: [AppComponent],
   entryComponents: [
     Dialogtest,
-    Updatetest3
+    Updatetest3,
+    Updatetest1
   ],
 })
 export class AppModule { }
