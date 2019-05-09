@@ -17,7 +17,7 @@ export class Resolveservice implements Resolve<EndpointComponent> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return new Promise((resolve) => {
             let endpointdata:any;
-            if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='joqu_userlist_view') {
+            if(route.data.condition!=null && route.data.condition.myid !=null && (route.data.condition.myid=='joqu_userlist_view' || route.data.condition.myid=='gamecategory_view')) {
                 let condition: any;
                 condition = {source: route.data.condition.myid};
                 endpointdata = {source: route.data.source, condition: condition}

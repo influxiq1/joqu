@@ -18,6 +18,23 @@
         <mat-error  *ngIf="!myForm.controls['gamedescription'].valid && myForm.controls['gamedescription'].touched">This field can not be blank</mat-error>
       </mat-form-field>
 
+
+
+
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Game Category" aria-label="Number" matInput [formControl]="myForm.controls['gamecategoryid']"  [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of gamecategorylist" [value]="option._id">
+            {{option.categoryname}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+
+
+
+
+
       <mat-form-field>
         <input matInput [matDatepicker]="picker" [formControl]="myForm.controls['st_dt']" placeholder="Choose a Start date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

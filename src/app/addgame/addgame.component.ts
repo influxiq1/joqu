@@ -10,7 +10,7 @@ export interface DialogData {
   msg: string;
 }
 
-
+/*
 
 
 import {FlatTreeControl} from '@angular/cdk/tree';
@@ -23,7 +23,7 @@ interface ExampleFlatNode {
   expandable: boolean;
   name: string;
   level: number;
-}
+}*/
 
 
 @Component({
@@ -32,14 +32,17 @@ interface ExampleFlatNode {
   styleUrls: ['./addgame.component.css']
 })
 export class AddgameComponent implements OnInit {
+  gamecategorylist: any=[];
+  autoval:any;
   public endpoint = 'addorupdatedata';
   public endpoint1 = 'datalist';
   public myForm: any;
   public imageuploadpath: any = environment.uploadfolder;
   public imagefilepath: any = environment.imagefilepath;
   public uploader: any = 'upload';
-  public categorylist: any;
-  public gametree1:GameNode[]=[];
+  // public categorylist: any;
+  static categorylist: any;
+  /*public gametree1:GameNode[]=[];
   private transformer = (node: GameNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -53,8 +56,9 @@ export class AddgameComponent implements OnInit {
   treeFlattener = new MatTreeFlattener(
       this.transformer, node => node.level, node => node.expandable, node => node.children);
 
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);*/
   constructor(public fb: FormBuilder, private cookieService: CookieService, public apiService: ApiService, public router: Router,public dialog: MatDialog ) {
+    this.searchusingautoval();
   }
 
   ngOnInit() {
@@ -69,13 +73,14 @@ export class AddgameComponent implements OnInit {
       st_tm: ['', Validators.required],
       end_tm: ['', Validators.required],
       status: [''],
+      gamecategoryid: ['', Validators.required],
     });
     this.apiService.uploadtype = 'single';
-    this.getcategorylist();
+  //  this.getcategorylist();
 
   }
 
-  getcategorylist(){
+ /* getcategorylist(){
     let data2 = {source:'gamecategorywisetest'};
     this.apiService.postData(this.endpoint1, data2).subscribe( res => {
       let result:any;
@@ -103,7 +108,13 @@ export class AddgameComponent implements OnInit {
     });
   }
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-  onSubmit() {
+  */
+
+ onSubmit() {
+  // if(typeof (this.myForm.controls['gamecategoryid'])=='object'){
+  //   this.myForm.controls['gamecategoryid'].patchValue(this.myForm.controls['gamecategoryid'].value._id);
+  // }
+
     let x: any;
     let data = this.myForm.value;
     console.log(data);
@@ -119,7 +130,7 @@ export class AddgameComponent implements OnInit {
     data.st_dt=new Date(this.myForm.value['st_dt']).getTime();
     data.enddt=new Date(this.myForm.value['enddt']).getTime();
 
-    let data1 = {data: data,source:'game',sourceobj:['joquuser_id']};
+    let data1 = {data: data,source:'game',sourceobj:['joquuser_id','gamecategoryid']};
 
     if (this.myForm.valid) {
       if (this.apiService.fileservername == null || this.apiService.fileservername[this.uploader] == null) {
@@ -148,7 +159,25 @@ export class AddgameComponent implements OnInit {
   clearfun(val) {
     this.myForm.controls[val].markAsUntouched();
   }
+  displayFn(optionid) {
+   for(let i in AddgameComponent.categorylist){
+     if(AddgameComponent.categorylist[i]._id==optionid)
+     {
+       return AddgameComponent.categorylist[i].categoryname;
+     }
+   }
+   // return option ? option.categoryname : undefined;
+  }
 
+  searchusingautoval() {
+    let data2 = {source:'gamecategory',sourceobj:['gamecategoryid']};
+    this.apiService.postData(this.endpoint1, data2).subscribe( res => {
+      let result:any;
+      result = res;
+      this.gamecategorylist=result.res;
+      AddgameComponent.categorylist = this.gamecategorylist;
+    });
+  }
 
   // https://agranom.github.io/ngx-material-timepicker/
 

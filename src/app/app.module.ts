@@ -32,12 +32,14 @@ import { AddgameComponent,Updatetest1 } from './addgame/addgame.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { GameeditComponent } from './gameedit/gameedit.component';
-import { UploaderComponent } from './uploader/uploader.component';
+import { UploaderComponent,Updatetest4 } from './uploader/uploader.component';
 import {NgxUploaderModule} from 'ngx-uploader';
 import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
 import { UsergamelistComponent } from './usergamelist/usergamelist.component';
 import { GamecategoryaddComponent } from './gamecategoryadd/gamecategoryadd.component';
 import { TestComponent } from './test/test.component';
+import { UsergamecategoryviewComponent } from './usergamecategoryview/usergamecategoryview.component';
+import { GamecategorylistComponent } from './gamecategorylist/gamecategorylist.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { TestComponent } from './test/test.component';
     JoqulistComponent,
     JoqueditComponent,Updatetest3,
     AddgameComponent,Updatetest1,
-    GamelistComponent, GameeditComponent,UploaderComponent, UsergamelistComponent, GamecategoryaddComponent, TestComponent
+    GamelistComponent, GameeditComponent,UploaderComponent,Updatetest4, UsergamelistComponent, GamecategoryaddComponent, TestComponent, UsergamecategoryviewComponent, GamecategorylistComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ import { TestComponent } from './test/test.component';
   entryComponents: [
     Dialogtest,
     Updatetest3,
-    Updatetest1
+    Updatetest1,
+    Updatetest4
   ],
 })
 export class AppModule { }

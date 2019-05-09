@@ -1,0 +1,15 @@
+<app-main-nav>
+  <mat-toolbar class="game_list_header" > Game Categories Created &nbsp;&nbsp;</mat-toolbar>
+  <div class="mat-elevation-z8">
+    <lib-listing    *ngIf="gamecatlist!=null && gamecatlist.length>0"
+                    [datasource]="gamecatlist"
+                    [skip]="gamecatlist_skip"
+                    [modify_header_array]="gamecatlist_modify_header"
+                    [apiurl]="apiservice.domain"
+                    [jwttoken]="apiservice.jwttoken"
+                    [sourcedata]="tablename"
+                    [deleteendpoint]="delurl"
+    >
+    </lib-listing>
+  </div>
+</app-main-nav>

@@ -20,10 +20,11 @@ export class GameeditComponent implements OnInit {
   endpoint1:any='addorupdatedata';
   public myForm: any;
   public endpoint2: any="statusupdate";
-
+  static categorylist: any;
   public imageuploadpath: any = environment.uploadfolder;
   public imagefilepath: any = environment.imagefilepath;
   public uploader: any = 'upload';
+  gamecategorylist: any=[];
 
   constructor(  public _http: HttpClient, private router: Router, public route : ActivatedRoute, public apiservice: ApiService,public cookieService: CookieService,public fb: FormBuilder) {
     this.route.params.subscribe(params => {
@@ -41,10 +42,12 @@ export class GameeditComponent implements OnInit {
       max_pay_of_amount: ['', Validators.required],
       st_tm: ['', Validators.required],
       end_tm: ['', Validators.required],
-      status: ['']
+      status: [''],
+      gamecategoryid: ['', Validators.required]
     }
     );
     this.apiservice.uploadtype = 'single';
+    this.searchusingautoval();
   }
 
   ngOnInit() {
@@ -76,10 +79,12 @@ export class GameeditComponent implements OnInit {
         max_pay_of_amount: [this.modeldata.max_pay_of_amount, Validators.required],
         st_tm: [this.modeldata.st_tm, Validators.required],
         end_tm: [this.modeldata.end_tm, Validators.required],
-        status: [stat]
+        status: [stat],
+        gamecategoryid: [this.modeldata.gamecategoryid, Validators.required]
           }
       );
     });
+    this.displayFn(this.modeldata.gamecategoryid);
     console.log( this.myForm.value);
   }
 
@@ -89,7 +94,6 @@ export class GameeditComponent implements OnInit {
   }
 
   onSubmit() {
-
     let data = this.myForm.value;
 
     data.images = this.apiservice.fileservername[this.uploader];
@@ -99,8 +103,7 @@ export class GameeditComponent implements OnInit {
     if(this.myForm.value['status']==true) this.myForm.value['status']=1;
     else this.myForm.value['status'] = 0;
 
-    let data1 = {data: data,source:'game',sourceobj:['joquuser_id']};
-
+    let data1 = {data: data,source:'game',sourceobj:['joquuser_id','gamecategoryid']};
     let x: any;
     for (x in this.myForm.controls) {
       this.myForm.controls[x].markAsTouched();
@@ -120,9 +123,30 @@ export class GameeditComponent implements OnInit {
       });
     }
   }
+
   clearfun(val) {
     this.myForm.controls[val].markAsUntouched();
   }
 
+  displayFn(optionid) {
+    setTimeout(() => {
+      for (let i in GameeditComponent.categorylist) {
+        if (GameeditComponent.categorylist[i]._id == optionid) {
+          console.log(GameeditComponent.categorylist[i].categoryname);
+          return GameeditComponent.categorylist[i].categoryname;
+        }
+      }
+    }, 500);
+  }
+
+  searchusingautoval() {
+    let data2 = {source:'gamecategory',sourceobj:['gamecategoryid']};
+    this.apiservice.postData(this.endpoint, data2).subscribe( res => {
+      let result:any;
+      result = res;
+      this.gamecategorylist=result.res;
+      GameeditComponent.categorylist = this.gamecategorylist;
+    });
+  }
 
 }

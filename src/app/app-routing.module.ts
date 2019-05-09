@@ -19,6 +19,8 @@ import {GamelistComponent} from "./gamelist/gamelist.component";
 import {UsergamelistComponent} from "./usergamelist/usergamelist.component";
 import {GamecategoryaddComponent} from "./gamecategoryadd/gamecategoryadd.component";
 import {TestComponent} from "./test/test.component";
+import {UsergamecategoryviewComponent} from "./usergamecategoryview/usergamecategoryview.component";
+import {GamecategorylistComponent} from "./gamecategorylist/gamecategorylist.component";
 
 
 const routes: Routes = [
@@ -38,7 +40,9 @@ const routes: Routes = [
   {path: 'gameedit/:pagename', component: GameeditComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: "datalist",edit:'1', condition: {myid:"gameeditid"}}},
   {path: 'usergamelist', component: UsergamelistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"game_status_gretterthan_zero_view"}}},
   {path: 'gamecategoryadd', component: GamecategoryaddComponent},
-  {path: 'test', component: TestComponent}
+  {path: 'test', component: TestComponent},
+  {path: 'usergamecategory', component: UsergamecategoryviewComponent},
+  {path: 'gamecategorylist', component: GamecategorylistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"gamecategory_view"}}},
 ];
 
 @NgModule({

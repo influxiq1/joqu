@@ -1,15 +1,15 @@
 <app-main-nav>
 
 
-
+<!--
   <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-    <!-- This is the tree node template for leaf nodes -->
+    &lt;!&ndash; This is the tree node template for leaf nodes &ndash;&gt;
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-      <!-- use a disabled button to provide padding for tree leaf -->
+      &lt;!&ndash; use a disabled button to provide padding for tree leaf &ndash;&gt;
       <button mat-icon-button disabled></button>
       {{node.name}}
     </mat-tree-node>
-    <!-- This is the tree node template for expandable nodes -->
+    &lt;!&ndash; This is the tree node template for expandable nodes &ndash;&gt;
     <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
       <button mat-icon-button matTreeNodeToggle
               [attr.aria-label]="'toggle ' + node.name">
@@ -19,9 +19,7 @@
       </button>
       {{node.name}}
     </mat-tree-node>
-  </mat-tree>
-
-
+  </mat-tree>-->
 
 
 
@@ -40,6 +38,29 @@
       <textarea matInput placeholder="Game Description" [formControl]="myForm.controls['gamedescription']" (blur)="clearfun('gamedescription')"></textarea>
       <mat-error  *ngIf="!myForm.controls['gamedescription'].valid && myForm.controls['gamedescription'].touched">This field can not be blank</mat-error>
     </mat-form-field>
+
+
+
+
+
+   <!-- <mat-form-field>
+    <input type="text" placeholder="Game Category" matInput [formControl]="myForm.controls['gamecategoryid']"  [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of gamecategorylist" [value]="option">
+        {{option.categoryname}}
+      </mat-option>
+    </mat-autocomplete>
+    </mat-form-field>-->
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Game Category" aria-label="Number" matInput [formControl]="myForm.controls['gamecategoryid']"  [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of gamecategorylist" [value]="option._id">
+          {{option.categoryname}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
 
     <mat-form-field>
       <input matInput [matDatepicker]="picker" [formControl]="myForm.controls['st_dt']" placeholder="Choose a Start date">
