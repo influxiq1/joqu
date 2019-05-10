@@ -1,6 +1,6 @@
 <app-main-nav>
 
-  <mat-toolbar class="game_list_header"> Applied for shout &nbsp;&nbsp;</mat-toolbar>
+  <mat-toolbar class="game_list_header"> Applied for Shout &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
     <lib-listing    *ngIf="joqu_userlist_view!=null && joqu_userlist_view.length>0"
                     [datasource]="joqu_userlist_view"
@@ -24,9 +24,34 @@
                     [apiurl]="apiservice.domain"
                     [jwttoken]="apiservice.jwttoken"
                     [editroute]="game_view_editroute1"
+
+
+                    [sourcedata]="game_view_tablename"
+                    [deleteendpoint]="delurl"
+                    [statusarr]="game_view_statusarray"
     >
     </lib-listing>
   </div>
 
+  <mat-toolbar class="game_list_header" > Game Category List &nbsp;&nbsp;</mat-toolbar>
+  <div class="mat-elevation-z8">
+    <lib-listing    *ngIf="gamecat_view!=null && gamecat_view.length>0"
+                    [datasource]="gamecat_view"
+                    [skip]="gamecat_view_skip"
+                    [modify_header_array]="gamecat_view_modify_header"
+                    [apiurl]="apiservice.domain"
+                    [jwttoken]="apiservice.jwttoken"
+                    [editroute]="gamecat_view_editroute1"
+
+
+
+                    [sourcedata]="gamecat_view_tablename"
+                    [deleteendpoint]="delurl"
+                    [statusarr]="gamecat_view_statusarray"
+
+    >
+    </lib-listing>
+
+  </div>
 
 </app-main-nav>

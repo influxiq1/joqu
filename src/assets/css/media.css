@@ -1,19 +1,63 @@
+
+
+
+
+
+@media only screen and (max-width: 1560px) {
+    .affiliateBanner_wrapper .time_and_price .t-price_container{ padding: 5px!important; }
+    .affiliateBanner_wrapper .time_and_price .t-price_container span i { padding-right: 3px; }
+
+}
+@media only screen and (max-width: 1440px) {
+    .affiliateBanner_wrapper .time_and_price .t-price_container{ font-size: 13px; }
+}
+@media only screen and (max-width: 1340px) {
+    .affiliateBanner_wrapper .time_and_price { flex-direction: column; }
+    .affiliateBanner_wrapper .time_and_price .t-price_container {
+        font-size: 16px;
+        padding: 6px 10px!important;
+    }
+    .affiliateBanner_wrapper .time_and_price .t-price_container {
+        width: 94%;}
+}
 @media only screen and (max-width: 960px) {
     .mat-dialog-container{ width: 80vw!important; }
     .form_wrapper {
         width: auto!important;
     }
+    .image_wrpp {
+        height: 200px;
+    }
 
 
 }
-@media only screen and (max-width: 500px) {
-    .s_getmyoffer_login_wrapper {
-        width:70% !important; padding: 26px 5%!important;  margin-bottom: 40px!important;
+@media only screen and (max-width: 768px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card {
+        width: 49%;
+        margin-bottom: 2%!important;
     }
-    .s_getmyoffer .s_shatter_logo {
-        margin-top: 50px!important;
+    .ng-tns-c16-3 .ng-star-inserted{
+
+    }
+    .ngx-mat-drp-calendar-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        min-width: 90vw!important;
+        height: auto!important;
+
+    }
+    .cdk-overlay-container {
+        position: absolute!important;
+        z-index: 1000;
+        }
+    .ngx-mat-drp-calendar-container .ngx-mat-drp-calendar-item {
+        top: 0!important;
     }
 }
+
 @media(max-width: 668px) {
     .mobile-label {
         width:100px!important;
@@ -50,6 +94,36 @@
         background: #fff;
         border-top: 2px solid #f2f1f3;
         justify-content: center!important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .s_getmyoffer_login_wrapper {
+        width:70% !important; padding: 26px 5%!important;  margin-bottom: 40px!important;
+    }
+    .s_getmyoffer .s_shatter_logo {
+        margin-top: 50px!important;
+    }
+}
+@media(max-width: 480px) {
+ .affiliateBanner_wrapper .afbanner_content .mat-card {
+        width: 100%;
+        margin-bottom: 2%!important;
+    }
+   .affiliateBanner_wrapper .example-full-width {
+        width: auto;
+   }
+    .affiliateBanner_wrapper.mat-form-field-appearance-outline .action_bar .mat-form-field-label {
+        top: 1.84375em;
+        margin-top: -5px!important;
+    }
+    .affiliateBanner_wrapper .action_bar  .mat-form-field-appearance-outline .mat-form-field-wrapper{ margin:0!important; }
+     .affiliateBanner_wrapper .action_bar  .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 10px 0;
+    }
+    .affiliateBanner_wrapper .action_bar button {
+        width: 100px;
+        font-size: 16px!important;
+        margin-left: 5px;
     }
 }
 @media(max-width: 332px) {

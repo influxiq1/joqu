@@ -1,0 +1,48 @@
+<app-main-nav>
+
+  <mat-toolbar class="game_list_header"> Update Account&nbsp;&nbsp;</mat-toolbar>
+
+  <mat-card class="form_wrapper">
+
+    <mat-card-header class="logo_wrapper_login">
+      <img src="../../assets/images/joqulogo.png">
+    </mat-card-header>
+
+    <div class="example-container add_form" [formGroup]="myForm">
+
+      <mat-form-field>
+        <input matInput placeholder="firstname" [formControl]="myForm.controls['firstname']" (blur)="clearfun('firstname')">
+        <mat-error  *ngIf="!myForm.controls['firstname'].valid && myForm.controls['firstname'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="lastname" [formControl]="myForm.controls['lastname']" (blur)="clearfun('lastname')">
+        <mat-error  *ngIf="!myForm.controls['lastname'].valid && myForm.controls['lastname'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+
+        <input matInput placeholder="age" [formControl]="myForm.controls['age']" (blur)="clearfun('age')">
+        <mat-error  *ngIf="!myForm.controls['age'].valid && myForm.controls['age'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="phone" [formControl]="myForm.controls['phone']" (blur)="clearfun('phone')">
+        <mat-error  *ngIf="!myForm.controls['phone'].valid && myForm.controls['phone'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="email" [formControl]="myForm.controls['email']" readonly (blur)="clearfun('email')">
+        <mat-error  *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="city" [formControl]="myForm.controls['city']" (blur)="clearfun('city')">
+        <mat-error  *ngIf="!myForm.controls['city'].valid && myForm.controls['city'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button class="form_add_button" (click)="onSubmit()"><i class="material-icons"></i> Update</button>
+
+    </div>
+  </mat-card>
+
+</app-main-nav>

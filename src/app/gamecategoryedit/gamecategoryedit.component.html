@@ -1,0 +1,28 @@
+<app-main-nav>
+  <mat-toolbar class="game_list_header"> Update Game Category &nbsp;&nbsp;</mat-toolbar>
+  <mat-card class="form_wrapper">
+    <mat-card-header class="logo_wrapper_login">
+      <img src="../../assets/images/joqulogo.png">
+    </mat-card-header>
+    <div class="example-container add_form" [formGroup]="myForm">
+
+      <mat-form-field>
+        <mat-label>Select Main Category Name</mat-label>
+        <select matNativeControl [formControl]="myForm.controls['parentcategoryid']" >
+          <option value='' >No category selected</option>
+          <option value={{item._id}} *ngFor="let item of categorylist">{{item.categoryname}}</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Create a Category" [formControl]="myForm.controls['categoryname']" (blur)="clearfun('categoryname')">
+        <mat-error  *ngIf="!myForm.controls['categoryname'].valid && myForm.controls['categoryname'].touched">This field can not be blank</mat-error>
+      </mat-form-field>
+      <mat-checkbox [formControl]="myForm.controls['status']">Status</mat-checkbox>
+      <button mat-raised-button class="form_add_button" (click)="onSubmit()"><i class="material-icons"></i> Update</button>
+    </div>
+  </mat-card>
+
+
+
+</app-main-nav>

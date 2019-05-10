@@ -1,6 +1,9 @@
 <app-main-nav>
   <mat-toolbar class="game_list_header" > Game Categories Created &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
+       <span class="add_button_wrapper">
+        <button mat-raised-button [routerLink]="['/gamecategoryadd']"> Add Game Category</button>
+      </span>
     <lib-listing    *ngIf="gamecatlist!=null && gamecatlist.length>0"
                     [datasource]="gamecatlist"
                     [skip]="gamecatlist_skip"
@@ -9,6 +12,8 @@
                     [jwttoken]="apiservice.jwttoken"
                     [sourcedata]="tablename"
                     [deleteendpoint]="delurl"
+                    [editroute]="editroute1"
+                    [statusarr]="gamecatlist_statusarray"
     >
     </lib-listing>
   </div>

@@ -11,10 +11,13 @@ declare var moment: any;
 export class GamecategorylistComponent implements OnInit {
   gamecatlist: any=[];
   gamecatlist_skip: any= ['_id'];
-  gamecatlist_modify_header: any = {'categoryname': 'Category Name','totalcat':'Next level Category Length(totalcat)', 'catsum':'Total categories inside it(catsum)', 'level':'Level'};
+  gamecatlist_modify_header: any = {'categoryname': 'Category Name','totalcat':'Sub Categories under this', 'catsum':'Total categories inside it(catsum)', 'level':'Level', 'status':'Status', 'dateformat':'Added On'};
   endpoint:any='datalist';
   tablename='gamecategory';
   delurl='deletesingledata';
+  editroute1:any='gamecategoryedit';
+  gamecatlist_statusarray:any=[{val:1,name:'Active'},{val:0,name:'Inactive'}];
+
 
   constructor(public router: Router,private route: ActivatedRoute, public apiservice: ApiService) {
   }
@@ -24,7 +27,6 @@ export class GamecategorylistComponent implements OnInit {
       console.log('json',data['results']);
       this.gamecatlist=data['results'].res;
       console.log(this.gamecatlist);
-      this.gamecatlist[0].catsum='';
     });
   }
 }

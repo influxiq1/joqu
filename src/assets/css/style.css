@@ -62,9 +62,23 @@ body{ margin: 0; padding: 0;  }
     font-style: normal;
 }
 @font-face {
-url('../fonts/Noteworthy-Bold.woff.woff2') format('woff2'),
-url('../fonts/Noteworthy-Bold.woff.woff') format('woff'),
-font-family: 'Noteworthy';
+    font-family: 'OpenSansSemiBold';
+    src: url('../fonts/OpenSans-Semibold.woff2') format('woff2'),
+    url('../fonts/OpenSans-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSans.woff2') format('woff2'),
+    url('../fonts/OpenSans.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    url('../fonts/Noteworthy-Bold.woff.woff2') format('woff2'),
+    url('../fonts/Noteworthy-Bold.woff.woff') format('woff'),
+    font-family: 'Noteworthy';
     font-weight: bold;
     font-style: normal;
 }
@@ -449,26 +463,29 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
 }
 
 /*AFFLIATE Game SECTION*/
-
+.game_list_bdy{
+    background: #f7f6f6!important;
+}
 .affiliateBanner_wrapper .afbanner_content{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
 }
-
+.afbanner_content .game_name{ padding: 0 10px!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card .mat-card-image:nth-child(1){margin: 0!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card{
     width: 32.7%;
     padding: 0!important;
     margin-bottom: 1%!important;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+    overflow: hidden;
 }
 
 .affiliateBanner_wrapper .afbanner_content  .inner_mat .mat-toolbar-row{
-    background: #f1f1f1!important;
+    background: #fff!important;
     min-height: inherit!important;
-    padding: 0 10px!important;
-    padding-bottom: 10px!important;
 }
 .gamebar_spacer{ flex: 1 1 auto; }
 
@@ -476,7 +493,7 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     width: 100%;
     height: 260px;
 }
-.image_wrpp img{ object-fit: contain; height: 100%; }
+.image_wrpp img{ object-fit: contain; height: 100%; width: 100%; }
 
 .affiliateBanner_wrapper .header_part{ background: red!important; padding: 0 10px!important;}
 .affiliateBanner_wrapper .header_part h3{ color: #fff; font-size: 30px;}
@@ -487,28 +504,35 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     justify-content: flex-start;
     align-items: flex-start;
 }
+.affiliateBanner_wrapper .game_cvr_wrpr button{ margin-left: 10px;}
+.affiliateBanner_wrapper .game_cvr_wrpr{
+    background: #efefef;
+    margin-bottom: 15px!important;
+    padding: 10px 0;
+}
 .affiliateBanner_wrapper .time_and_price{
     display: flex;
     width: 100%;
 }
-.affiliateBanner_wrapper .time_and_price .t-price_container:last-child{ border: 1px solid #808080; }
+.affiliateBanner_wrapper .time_and_price .t-price_container:last-child{ border: 1px solid #d9d9d9; }
 .affiliateBanner_wrapper  .time_and_price .t-price_container{ width: 100%;
-    border: 1px solid #808080;
+    border: 1px solid #d9d9d9;
     border-right: 0;
     padding: 10px;
     padding-bottom: 10px!important;
 }
-.affiliateBanner_wrapper  .time_and_price .t-price_container span{ display: flex; width: 100%; align-items: center; font-family: 'RobotoMedium'; }
-.affiliateBanner_wrapper  .time_and_price .t-price_container span i{ transform: rotate(-180deg); padding-right: 10px; }
+.affiliateBanner_wrapper  .time_and_price .t-price_container span{ display: flex; width: 100%; align-items: center; font-family: 'OpenSansSemiBold'; }
+.affiliateBanner_wrapper  .time_and_price .t-price_container span i{ transform: rotate(-180deg); padding-right: 10px; color: #2196f3; }
 .affiliateBanner_wrapper .time_and_price span .price_color{ color: #ffa500;}
 
-.affiliateBanner_wrapper .category1{ padding: 10px 0; }
+.affiliateBanner_wrapper .category1{ padding: 8px 10px; font-size: 18px; font-family: 'OpenSansSemiBold'; color: #2a2929;  }
 .affiliateBanner_wrapper .category2{
-    border-top: 1px solid gray;
+    border-top: 1px solid #d9d9d9;
     display: block;
     width: 100%;
-    padding: 5px 0 0 0;
-    font-size: 18px;
+    padding: 5px;
+    font-family: 'OpenSansRegular';
+    font-size: 14px;
 }
 .bottom_wrapper { margin: 0 auto; text-align: center; display: flex; width: 198px;
     justify-content: space-between;}
@@ -519,3 +543,49 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     border-radius: 50%;
 }
 .bottom_wrapper button{ background: #1da1f2; color: #fff; border-radius: 40px; font-size: 26px; font-family: 'pacifico'; }
+
+
+.affiliateBanner_wrapper .ngx-mat-drp-date-input[_ngcontent-ngo-c7] {
+    /* text-overflow: ellipsis; */
+    color: #4169e1;
+    padding: 10px 0!important;
+    width: 100%;
+}
+.ngx-mat-drp-presets-list[_ngcontent-enf-c18] li[_ngcontent-enf-c18] {
+    margin: 5px 0;
+    padding: 4%;
+    cursor: pointer;
+    background: #3b6bba!important;
+    color: #ffffff!important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.affiliateBanner_wrapper .action_bar button{ width: 160px; font-size: 20px!important; margin-left: 10px;}
+.affiliateBanner_wrapper .action_bar{
+    display: flex;
+    background: #efefef;
+    margin-bottom: 10px!important;
+    justify-content: space-between;
+}
+.affiliateBanner_wrapper .example-full-width{ padding: 0px!important; width: 100%; }
+.affiliateBanner_wrapper .example-full-width .mat-form-field-wrapper{ padding: 0px!important; }
+.afbanner_content .game_name span{ font-size: 18px; font-family: 'OpenSansSemiBold'; color: #1a1919; }
+
+
+.form_wrapper .ngx-material-timepicker-toggle{ float: right!important;}
+
+.form_wrapper .uploadfile {
+    background: #fe0000 !important;
+    border: none;
+    padding: 5px 20px 7px;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'OpenSansSemiBold';
+    margin: 15px 0;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}

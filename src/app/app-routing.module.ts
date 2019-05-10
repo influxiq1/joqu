@@ -21,6 +21,8 @@ import {GamecategoryaddComponent} from "./gamecategoryadd/gamecategoryadd.compon
 import {TestComponent} from "./test/test.component";
 import {UsergamecategoryviewComponent} from "./usergamecategoryview/usergamecategoryview.component";
 import {GamecategorylistComponent} from "./gamecategorylist/gamecategorylist.component";
+import {GamecategoryeditComponent} from "./gamecategoryedit/gamecategoryedit.component";
+import {MyaccountComponent} from "./myaccount/myaccount.component";
 
 
 const routes: Routes = [
@@ -29,7 +31,7 @@ const routes: Routes = [
   {path: 'forgetpassword', component: ForgetpasswordComponent},
   {path: 'resetpassword/:token', component: ResetpasswordComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'adminlist', component: AdminlistComponent},
+  {path: 'adminlist', component: AdminlistComponent, canActivate: [AuthGuard]},
   {path: 'form', component: FormComponent},
   {path: 'gridview', component: GridviewComponent},
   {path: 'joqulist', component: JoqulistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"joqu_userlist_view"}}},
@@ -39,10 +41,12 @@ const routes: Routes = [
   {path: 'gamelist', component: GamelistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"game_view"}}},
   {path: 'gameedit/:pagename', component: GameeditComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: "datalist",edit:'1', condition: {myid:"gameeditid"}}},
   {path: 'usergamelist', component: UsergamelistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"game_status_gretterthan_zero_view"}}},
-  {path: 'gamecategoryadd', component: GamecategoryaddComponent},
+  {path: 'gamecategoryadd', component: GamecategoryaddComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"gamecategory_view"}}},
   {path: 'test', component: TestComponent},
   {path: 'usergamecategory', component: UsergamecategoryviewComponent},
   {path: 'gamecategorylist', component: GamecategorylistComponent, canActivate: [AuthGuard], resolve: { results: Resolveservice}, data: {source: 'datalist',condition: {myid:"gamecategory_view"}}},
+  {path: 'gamecategoryedit/:pagename', component: GamecategoryeditComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: "datalist",edit:'1', condition: {myid:"gamecategoryeditid"}}},
+  {path: 'myaccount', component: MyaccountComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'datalist',condition: {myid:"users"}}},
 ];
 
 @NgModule({
