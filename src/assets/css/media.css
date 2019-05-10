@@ -47,16 +47,18 @@
         justify-content: space-around;
         min-width: 90vw!important;
         height: auto!important;
-
+        flex-wrap: wrap;
     }
-    .cdk-overlay-container {
-        position: absolute!important;
-        z-index: 1000;
-        }
-    .ngx-mat-drp-calendar-container .ngx-mat-drp-calendar-item {
-        top: 0!important;
+    .cdk-overlay-pane{ overflow: hidden!important; max-width: 95%!important; top: 95.25px!important;  }
+    .cdk-overlay-connected-position-bounding-box { width: 98%!important; }
+}
+@media screen and (max-device-width: 760px) {
+    .affiliateBanner_wrapper .ng-trigger ng-trigger-transformPickerOverlay{
+        display: flex!important;
+        flex-wrap: wrap!important;
     }
 }
+
 
 @media(max-width: 668px) {
     .mobile-label {
@@ -103,6 +105,12 @@
     .s_getmyoffer .s_shatter_logo {
         margin-top: 50px!important;
     }
+      .cdk-overlay-pane {  overflow: auto!important; }
+    .ngx-mat-drp-calendar-item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%!important;
+
+    }
 }
 @media(max-width: 480px) {
  .affiliateBanner_wrapper .afbanner_content .mat-card {
@@ -125,6 +133,7 @@
         font-size: 16px!important;
         margin-left: 5px;
     }
+
 }
 @media(max-width: 332px) {
     .mobile-label {

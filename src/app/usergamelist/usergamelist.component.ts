@@ -13,6 +13,7 @@ export class UsergamelistComponent implements OnInit {
   gamelist: any=[];
   endpoint:any='datalist';
   autoval:any;
+  pageloaded:any=0;
 
   range:Range = {fromDate:new Date(), toDate: new Date()};
   options:NgxDrpOptions;
@@ -118,12 +119,14 @@ export class UsergamelistComponent implements OnInit {
     });
   }
   updateRange(range: Range){
-    console.log('---------------6-----------------');
     this.range = range;
-    console.log(this.range);
     // this.range.fromDate
     // this.range.toDate
-    this.getgames(2);
+    if(this.pageloaded==1){
+      console.log('---------------6-----------------');
+      console.log(this.range);
+      this.getgames(2);
+    }
   }
 
   // helper function to create initial presets
@@ -136,7 +139,7 @@ export class UsergamelistComponent implements OnInit {
 
     const today = new Date();
     const yesterday = backDate(1);
-    const minus7 = backDate(7)
+    const minus7 = backDate(7);
     const minus30 = backDate(30);
     const currMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
     const currMonthEnd = new Date(today.getFullYear(), today.getMonth()+1, 0);
@@ -150,5 +153,10 @@ export class UsergamelistComponent implements OnInit {
       {presetLabel: "This Month", range:{ fromDate: currMonthStart, toDate:currMonthEnd }},
       {presetLabel: "Last Month", range:{ fromDate: lastMonthStart, toDate:lastMonthEnd }}
     ]
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked()');
+    this.pageloaded=1;
   }
 }
