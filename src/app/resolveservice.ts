@@ -22,12 +22,12 @@ export class Resolveservice implements Resolve<EndpointComponent> {
                 condition = {source: route.data.condition.myid};
                 endpointdata = {source: route.data.source, condition: condition}
             }
-            else if(route.data.condition!=null && route.data.condition.myid !=null && ( route.data.condition.myid=='game_status_gretterthan_zero_view')) {
+            else if(route.data.condition!=null && route.data.condition.myid !=null && route.data.condition.myid=='game_status_gretterthan_zero_view') {
                 let condition: any;
                 condition = {"source": route.data.condition.myid,condition: {
                     "st_dt":{
-                        $lte: new Date(moment().add(1, 'months').format('MM/DD/YYYY')).getTime(),
-                        $gt: new Date(moment().subtract(1, 'days').format('MM/DD/YYYY')).getTime()
+                         $lte: new Date(moment().add(1, 'months').format('MM/DD/YYYY')).getTime(),
+                        $gte: new Date(moment().format('MM/DD/YYYY')).getTime()
                     }
                 }};
                 endpointdata = {source: route.data.source, condition: condition}

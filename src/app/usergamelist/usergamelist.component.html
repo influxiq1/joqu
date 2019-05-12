@@ -2,7 +2,7 @@
 <app-main-nav>
 
     <mat-card class="game_list_bdy">
-        <mat-card class="inner_mat" *ngIf="gamelist==null || gamelist.length==0">No records found</mat-card>
+
         <mat-card-content class="affiliateBanner_wrapper">
             <mat-toolbar class="header_part">
                 <h3> Game List </h3>
@@ -10,9 +10,22 @@
             <br>
             <mat-card-content class="game_cvr_wrpr"> <button mat-stroked-button (click)="getgames(0)" color="warn" class="s_getmyoffer_login_button"  >Past Games</button>
                 <button mat-stroked-button  (click)="getgames(1)" class="s_getmyoffer_login_button" color="primary" >Current Games</button></mat-card-content>
+
+
+
             <mat-card-content>
-                <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
+                <input [matDatepicker]="picker" placeholder="Choose a Start date" [(ngModel)]="start_daterange">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
             </mat-card-content>
+            <mat-card-content>
+                <input [matDatepicker]="endpicker" placeholder="Choose an End date" [(ngModel)]="end_daterange">
+                <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                <mat-datepicker #endpicker></mat-datepicker>
+                <button  mat-flat-button color="primary" (click)="updateRange()" class="s_getmyoffer_login_button"  >Search</button>
+            </mat-card-content>
+
+
             <mat-card-content class="action_bar">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Search</mat-label>
@@ -21,12 +34,16 @@
                 <button  mat-flat-button color="primary" (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
                 <button mat-flat-button color="warn"  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
             </mat-card-content>
+
+
+
             <mat-autocomplete #auto="matAutocomplete">
                 <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
                     {{option.gamename}}
                 </mat-option>
             </mat-autocomplete>
-            <span class="afbanner_content">
+            <mat-card class="inner_mat" *ngIf="gamelist==null || gamelist.length==0">No records found</mat-card>
+            <span class="afbanner_content" *ngIf="gamelist.length>0">
                 <mat-card class="inner_mat" *ngFor="let item of gamelist">
                     <mat-card-content class="mat-card-imagecontain">
                         <mat-toolbar>
@@ -84,81 +101,3 @@
         </mat-action-row>-->
     </mat-card>
 </app-main-nav>
-
-
-
-<!--
-
-
-            <mat-card-content>   <button mat-button  (click)="getgames(0)" class="s_getmyoffer_login_button"  >Past Games</button></mat-card-content>
-            <mat-card-content>   <button mat-button  (click)="getgames(1)" class="s_getmyoffer_login_button"  >Current Games</button></mat-card-content>
-            <mat-card-content>
-                <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
-            </mat-card-content>
-            <mat-card-content>
-                <input type="text"  [(ngModel)]="autoval" [matAutocomplete]="auto" >
-                <button mat-button  (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
-                <button mat-button  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
-            </mat-card-content>
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
-                    {{option.gamename}}
-                </mat-option>
-            </mat-autocomplete>
-
-
-            <mat-card-content class="affiliateBanner_wrapper">
-      <mat-toolbar class="header_part">
-        <h3> Game List </h3>
-      </mat-toolbar>
-      <br>
-      <span class="afbanner_content">
-
-
-        <mat-card class="inner_mat" *ngFor="let item of gamelist">
-            <mat-card-content class="mat-card-imagecontain">
-              <mat-toolbar>
-                <mat-toolbar-row>
-                  <span> {{item.gamename}}</span>
-                  <span class="gamebar_spacer"></span>
-                  <span> {{item.st_dt_req}}</span>
-                </mat-toolbar-row>
-              </mat-toolbar>
-              <mat-card-content class="image_wrpp">
-                <img mat-card-image src="{{apiservice.imagefilepath}}/{{item.images[0]}}">
-              </mat-card-content>
-
-               <mat-toolbar class="footer_section">
-                 <mat-toolbar-row>
-                    <span class="category1"> {{item.gamedescription}} </span>
-                    <span class="category2">
-                    Categories: abcd, test
-                    </span>
-                 </mat-toolbar-row>
-               </mat-toolbar>
-              <mat-toolbar-row  class="time_and_price">
-                <span class="t-price_container">
-                  <span><b>Top Prize: (Up To)</b><i class="material-icons">error</i></span>
-                  <span class="price_color">${{item.max_pay_of_amount}}</span>
-                </span>
-                 <span class="t-price_container">
-                   <span><b>Ticket Prize:</b> <i class="material-icons">error</i></span>
-                  <span>$000</span>
-                </span>
-                 <span class="t-price_container">
-                   <span><b>Start Time</b> <i class="material-icons">error</i></span>
-                  <span>{{item.st_tm}}</span>
-                </span>
-
-              </mat-toolbar-row>
-
-            </mat-card-content>
-
-        </mat-card>
-</span>
-    </mat-card-content>
-  </mat-card>
-</app-main-nav>
-
-
--->
