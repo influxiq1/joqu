@@ -23,7 +23,10 @@
 @media only screen and (max-width: 960px) {
     .mat-dialog-container{ width: 80vw!important; }
     .form_wrapper {
-        width: auto!important;
+        width: 85%!important;
+        padding: 10px!important;
+        height: auto;
+        overflow: -webkit-paged-y;
     }
     .image_wrpp {
         height: 200px;
@@ -49,55 +52,58 @@
         height: auto!important;
         flex-wrap: wrap;
     }
-    .cdk-overlay-pane{ overflow: hidden!important; max-width: 95%!important; top: 95.25px!important;  }
+    .cdk-overlay-pane{ overflow: hidden!important; max-width: 94%!important; top: 95.25px!important;  }
     .cdk-overlay-connected-position-bounding-box { width: 98%!important; }
+
+    .form_wrapper{ border: none; width: 90%!important; }
 }
 @media screen and (max-device-width: 760px) {
     .affiliateBanner_wrapper .ng-trigger ng-trigger-transformPickerOverlay{
         display: flex!important;
         flex-wrap: wrap!important;
     }
+    .add_form { margin-top: 40px; }
 }
 
+/*@media(max-width: 668px) {*/
+    /*.mobile-label {*/
+        /*width:100px!important;*/
+        /*display: inline-block!important;*/
+        /*font-weight: bold;*/
+        /*padding: 10px 0;*/
+    /*}*/
 
-@media(max-width: 668px) {
-    .mobile-label {
-        width:100px!important;
-        display: inline-block!important;
-        font-weight: bold;
-        padding: 10px 0;
-    }
+    /*.mat-header-row {*/
+        /*display: none!important;*/
+    /*}*/
 
-    .mat-header-row {
-        display: none!important;
-    }
+    /*.mat-row {*/
+        /*flex-direction: column!important;*/
+        /*align-items: start!important;*/
+        /*padding: 8px!important;*/
+        /*display: flex!important;*/
+    /*}*/
+    /*tr.mat-footer-row, tr.mat-row {*/
+        /*height: auto!important;*/
+    /*}*/
+    /*td.mat-cell, td.mat-footer-cell, th.mat-header-cell {*/
+        /*width: 100%!important;*/
+    /*}*/
+    /*.actions {*/
+        /*flex-direction: column;*/
+        /*display: initial;*/
+    /*}*/
+    /*td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{padding-left: 0!important;}*/
+    /*.mat-raised-button{margin: 3px!important;}*/
+    /*.mat-paginator-container {*/
+        /*position: fixed;*/
+        /*bottom: 0;*/
+        /*background: #fff;*/
+        /*border-top: 2px solid #f2f1f3;*/
+        /*justify-content: center!important;*/
+    /*}*/
+/*}*/
 
-    .mat-row {
-        flex-direction: column!important;
-        align-items: start!important;
-        padding: 8px!important;
-        display: flex!important;
-    }
-    tr.mat-footer-row, tr.mat-row {
-        height: auto!important;
-    }
-    td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
-        width: 100%!important;
-    }
-    .actions {
-        flex-direction: column;
-        display: initial;
-    }
-    td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{padding-left: 0!important;}
-    .mat-raised-button{margin: 3px!important;}
-    .mat-paginator-container {
-        position: fixed;
-        bottom: 0;
-        background: #fff;
-        border-top: 2px solid #f2f1f3;
-        justify-content: center!important;
-    }
-}
 @media only screen and (max-width: 500px) {
     .s_getmyoffer_login_wrapper {
         width:70% !important; padding: 26px 5%!important;  margin-bottom: 40px!important;
@@ -134,10 +140,17 @@
         margin-left: 5px;
     }
 
-}
-@media(max-width: 332px) {
-    .mobile-label {
-        width:80px!important;
 
-    }
+}
+@media screen and (max-width: 360px){
+
+.form_wrapper {
+    width: auto;
+    padding: 10px!important;
+ }
+}
+
+@media(max-width: 332px) {
+    .mobile-label {width:80px!important;  }
+
 }
