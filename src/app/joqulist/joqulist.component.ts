@@ -14,6 +14,9 @@ export class JoqulistComponent implements OnInit {
   joquuserlist_modify_header1: any = { 'name': 'Full Name','email':'Email', 'age':'Age', 'dateformat':'Date','status':'Status','phone':'Phone'};
    joquuserlist_statusarray:any=[{val:2,name:'Processed by admin'},{val:3,name:'Shout A/c Created'}];
   editroute1:any='joquedit';
+  tablename:any='users';
+  endpoint:any='datalist';
+  joquuserlist_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.joquuserlist_statusarray}],textsearch:[{label:"Search By Email",field:'email'}]};
 
   constructor(public router: Router,private route: ActivatedRoute, public apiservice: ApiService) {
   }

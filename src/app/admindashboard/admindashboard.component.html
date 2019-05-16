@@ -10,6 +10,9 @@
                     [jwttoken]="apiservice.jwttoken"
                     [statusarr]="joqu_userlist_view_statusarray"
                     [editroute]="joqu_userlist_view_editroute1"
+                    [date_search_source]="joqu_userlist_tablename"
+                    [date_search_endpoint]="endpoint"
+                    [search_settings]="joqu_userlist_search_settings"
     >
     </lib-listing>
   </div>
@@ -24,11 +27,13 @@
                     [apiurl]="apiservice.domain"
                     [jwttoken]="apiservice.jwttoken"
                     [editroute]="game_view_editroute1"
-
-
                     [sourcedata]="game_view_tablename"
                     [deleteendpoint]="delurl"
                     [statusarr]="game_view_statusarray"
+                    [date_search_source]="game_view_tablename"
+                    [date_search_endpoint]="endpoint"
+                    [search_settings]="game_view_search_settings"
+                    [click_to_add_ananother_page]="game_view_click_to_add_ananother_page"
     >
     </lib-listing>
   </div>
@@ -42,12 +47,14 @@
                     [apiurl]="apiservice.domain"
                     [jwttoken]="apiservice.jwttoken"
                     [editroute]="gamecat_view_editroute1"
-
-
-
                     [sourcedata]="gamecat_view_tablename"
                     [deleteendpoint]="delurl"
                     [statusarr]="gamecat_view_statusarray"
+                    [date_search_source]="gamecat_view_tablename"
+                    [date_search_endpoint]="endpoint"
+                    [click_to_add_ananother_page]="gamecat_view_click_to_add_ananother_page"
+                    [search_settings]="gamecat_view_search_settings"
+
 
     >
     </lib-listing>

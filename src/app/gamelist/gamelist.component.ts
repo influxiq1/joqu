@@ -19,6 +19,10 @@ export class GamelistComponent implements OnInit {
   endpoint:any='datalist';
   tablename='game';
   delurl='deletesingledata';
+  click_to_add_ananother_page='/addgame';
+  search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.gamelist_statusarray}],textsearch:[{label:"Search By Game Name",field:'gamename'}]};
+
+
 
   constructor(public router: Router,private route: ActivatedRoute, public apiservice: ApiService) {
     

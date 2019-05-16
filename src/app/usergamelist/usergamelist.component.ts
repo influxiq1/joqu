@@ -77,6 +77,7 @@ export class UsergamelistComponent implements OnInit {
       console.log(this.gamelist);
     });
   }
+
   updateRange(){
     this.start_daterange=new Date(this.start_daterange).getTime();
     this.end_daterange=new Date(this.end_daterange).getTime();
