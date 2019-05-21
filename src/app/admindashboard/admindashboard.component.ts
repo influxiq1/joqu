@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class AdmindashboardComponent implements OnInit {
   game_view: any=[];
   game_view_skip: any= ['_id','created_at','unique_id','dateformat','st_dt', 'enddt', 'enddt','joquuser_id','images'];
-  game_view_modify_header: any =  {'gamename': 'Game Name','gamedescription':'Description', 'st dt req':'Start Date', 'endt req':'End Date','min pay of amount':'Minimum Payout Amount','max pay of amount':'Maximum Payout Amount','st tm':'Start Time','end tm':'End Time'};
+  game_view_modify_header: any =  {'gamename': 'Game Name','gamedescription':'Description', 'st dt req':'Start Date', 'endt req':'End Date','min pay of amount':'Minimum Payout Amount','max pay of amount':'Maximum Payout Amount','st tm':'Start Time','end tm':'End Time', 'gamecategoryname': 'Category Name', 'status': 'Status'};
   game_view_tablename='game';
   game_view_editroute1:any='gameedit';
   game_view_statusarray:any=[{val:1,name:'Active'},{val:0,name:'Inactive'}];

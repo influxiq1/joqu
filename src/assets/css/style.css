@@ -1,6 +1,5 @@
 body{ margin: 0; padding: 0;  }
 
-
 @font-face {
     font-family: 'RobotoBold';
     src: url('../fonts/Roboto-Bold.eot');
@@ -76,9 +75,9 @@ body{ margin: 0; padding: 0;  }
     font-style: normal;
 }
 @font-face {
-    url('../fonts/Noteworthy-Bold.woff.woff2') format('woff2'),
-    url('../fonts/Noteworthy-Bold.woff.woff') format('woff'),
-    font-family: 'Noteworthy';
+url('../fonts/Noteworthy-Bold.woff.woff2') format('woff2'),
+url('../fonts/Noteworthy-Bold.woff.woff') format('woff'),
+font-family: 'Noteworthy';
     font-weight: bold;
     font-style: normal;
 }
@@ -279,7 +278,9 @@ tr.mat-header-row {
 td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{ padding-right: 10px; }
 td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type{ width: 10%;}
 .action_button_wrap{ display: flex; justify-content: space-around;}
-.add_button{ float: right; margin-right: 17px!important; text-transform: uppercase; width: 150px;     background: #7028a5!important;
+.add_button{ float: right; margin-right: 17px!important; text-transform: uppercase; width: 150px;
+    /*background: #7028a5!important;*/
+    background: #07152b!important;
     color: rgb(255, 255, 255)!important;
 }
 /*.mat-form-field{display: block!important;}*/
@@ -466,21 +467,23 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
 .game_list_bdy{
     background: #f7f6f6!important;
 }
-.affiliateBanner_wrapper .afbanner_content{
-    display: flex;
-    justify-content: space-between;
+.affiliateBanner_wrapper .afbanner_content{ display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    margin: 0 -5px;
 
 }
 .afbanner_content .game_name{ padding: 0 10px!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card .mat-card-image:nth-child(1){margin: 0!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card{
-    width: 32.7%;
+    width: 32%;
     padding: 0!important;
     margin-bottom: 1%!important;
+    /*margin-right: 1%!important;*/
     border: 1px solid #d9d9d9;
     border-bottom: 0;
     overflow: hidden;
+    margin: 7px;
 }
 
 .affiliateBanner_wrapper .afbanner_content  .inner_mat .mat-toolbar-row{
@@ -595,4 +598,202 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
 
 .Sub_cat{
     width: 760px; margin: 0 auto; margin-top: 50px;
+}
+.calendar_wrapper .mat-form-field {
+    margin-right: 12px;
+}
+.search_wrapper{ display: flex!important; margin-bottom: 15px!important;}
+.search_wrapper button{ margin-left: 15px; width: 160px; }
+.search_wrapper .example-full-width .mat-form-field-wrapper {
+    padding: 0px!important;
+    margin: 0;
+}
+/*navbar image section*/
+.nav-image2{ width: 100px; display: none; }
+/*.nav-image2 .mat-card-image:first-child { margin-top: 0!important; }*/
+/*.nav-image2 .mat-card-image{ margin: 0!important;}*/
+/*.nav-image2 img{ width: 100%; vertical-align: middle; }*/
+
+/*navbar image end section*/
+
+
+/*JoquList */
+.joqulist .searchbar { background: none!important;}
+.joqulist .searchbar .mat-form-field {  width: auto!important; }
+.joqulist .searchbar { justify-content: flex-start!important; flex-wrap: wrap; margin: 15px 0;}
+
+/*game List*/
+.gamelist_wrapper .searchbar { background: none!important;}
+.gamelist_wrapper .searchbar .mat-form-field {  width: auto!important; }
+.gamelist_wrapper .searchbar { justify-content: flex-start!important; flex-wrap: wrap; margin: 15px 0;}
+.gamelist_wrapper table{ margin-top: 15px!important;}
+
+/*game_categorylist*/
+.game_categorylist .searchbar,
+.admindashboard_shout .searchbar,
+.gemes_categorylist .searchbar,
+.admindashboard_games_created .searchbar{ background: none!important; justify-content: flex-start!important; flex-wrap: wrap; margin: 15px 0;}
+
+.game_categorylist .searchbar .mat-form-field,
+.admindashboard_shout .searchbar .mat-form-field,
+.gemes_categorylist .searchbar .mat-form-field,
+.admindashboard_games_created .searchbar .mat-form-field{  width: auto!important; }
+
+/*.affiliateBanner_wrapper .afbanner_content .mat-card:nth-child(4n-1){ margin-right: 0!important;}*/
+
+
+/*confirm modal*/
+.custom-modalbox .mat-dialog-container{
+    background: #050e1d;
+    color: #fff;
+    padding: 50px!important;
+    border: 2px solid #4a86e8;
+    text-align: center;
+}
+.custom-modalbox .mat-dialog-actions{ margin-bottom: 0!important; justify-content: center;}
+.custom-modalbox button:first-child{ background: #4a86e8; }
+.custom-modalbox button:last-child{ background: #ff0000; }
+.custom-modalbox .mat-dialog-title { font-size: 24px; font-family: 'RobotoBold'; }
+.custom-modalbox p { font-size: 18px; font-family: 'RobotoMedium'; }
+
+.mat-bottom-sheet-container-large {
+    background: #050e1d!important;
+    border: 2px solid #3c76d2;
+}
+.mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+    color: #fff;
+    background: #4a86e8;
+    padding: 10px;
+}
+.admindashboard_shout table,
+.admindashboard_games_created table,
+.gemes_categorylist table{ margin-top: 15px!important;}
+
+
+
+
+@media screen and (max-width: 960px) {
+    .mat-header-cell {
+        display: none!important;
+    }
+    .mat-cell{
+        padding:0.5em 1em!important;
+    }
+    .mat-table {
+        border: 0;
+        vertical-align: middle
+    }
+
+    .mat-table caption {
+        font-size: 1em;
+    }
+
+    /*  Enable this to hide header
+    .mat-table .mat-header-cell {
+
+      border: 10px solid;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    */
+    .mat-table .mat-row {
+        border-bottom: 10px solid #ddd;
+        display: block;
+        height: auto;
+    }
+    /*
+    .mat-table .mat-row:nth-child(even) {background: #CCC}
+    .mat-table .mat-row:nth-child(odd) {background: #FFF}
+    */
+    /*.mat-table .mat-cell {*/
+    /*border-bottom: 1px solid #ddd;*/
+    /*display: block;*/
+    /*font-size: 1em;*/
+    /*text-align: right;*/
+    /*height:30px;*/
+    /*margin-bottom: 0%;*/
+    /*}*/
+
+    .mat-table .mat-cell {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+        height: auto;
+        margin-bottom: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        word-break: break-all;
+        padding-left: 25%!important;
+    }
+    .mat-table .mat-cell:before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: .85em;
+        position: absolute ;
+        left: 20px;
+    }
+    .mat-table .mat-cell:after {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(title);
+        float: left;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: .85em;
+        position: absolute ;
+        left: 20px;
+    }
+    .mat-table .mat-cell:last-child {
+        border-bottom: 0;
+    }
+    .mat-table .mat-cell:first-child {
+        margin-top: 0%;
+    }
+    .mat-footer-row, .mat-header-row, .mat-row {
+        display: flex;
+        border-width: 0;
+        border-bottom-width: 1px;
+        border-style: solid;
+        align-items: center;
+        box-sizing: border-box;
+        display: none;
+    }
+    td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+        width: auto;
+    }
+}
+.cursor{ cursor: pointer;}
+.cursor:nth-of-type(1){ color: #4a86e8;}
+.cursor:nth-of-type(2){ color: #ff0000;}
+.cursor:nth-of-type(3){ color: #3b6bba;}
+.cursor:nth-of-type(4){ color: #07152b;}
+
+
+@media screen and (max-width: 768px){
+    .toolbar_header button{ display: block!important;}
+}
+
+input.mat-input-element {
+    margin-top: -.0625em;
+    display: inline-block;
+    width: auto;
+}
+
+.gamebtnselected{
+    background-color: #d4d2c8!important;
 }

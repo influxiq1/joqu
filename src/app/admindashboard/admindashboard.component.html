@@ -2,7 +2,7 @@
 
   <mat-toolbar class="game_list_header"> Applied for Shout &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
-    <lib-listing    *ngIf="joqu_userlist_view!=null && joqu_userlist_view.length>0"
+    <lib-listing class="admindashboard_shout"   *ngIf="joqu_userlist_view!=null && joqu_userlist_view.length>0"
                     [datasource]="joqu_userlist_view"
                     [skip]="joqu_userlist_view_skip"
                     [modify_header_array]="joqu_userlist_view_modify_header"
@@ -20,7 +20,7 @@
 
   <mat-toolbar class="game_list_header" > Games Created &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
-    <lib-listing    *ngIf="game_view!=null && game_view.length>0"
+    <lib-listing class="admindashboard_games_created"   *ngIf="game_view!=null && game_view.length>0"
                     [datasource]="game_view"
                     [skip]="game_view_skip"
                     [modify_header_array]="game_view_modify_header"
@@ -40,7 +40,7 @@
 
   <mat-toolbar class="game_list_header" > Game Category List &nbsp;&nbsp;</mat-toolbar>
   <div class="mat-elevation-z8">
-    <lib-listing    *ngIf="gamecat_view!=null && gamecat_view.length>0"
+    <lib-listing class="gemes_categorylist" *ngIf="gamecat_view!=null && gamecat_view.length>0"
                     [datasource]="gamecat_view"
                     [skip]="gamecat_view_skip"
                     [modify_header_array]="gamecat_view_modify_header"

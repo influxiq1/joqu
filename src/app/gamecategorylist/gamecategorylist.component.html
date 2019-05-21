@@ -4,7 +4,7 @@
        <span class="add_button_wrapper">
         <!--<button mat-raised-button [routerLink]="['/gamecategoryadd']"> Add Game Category</button>-->
       </span>
-    <lib-listing    *ngIf="gamecatlist!=null && gamecatlist.length>0"
+    <lib-listing class="game_categorylist" *ngIf="gamecatlist!=null && gamecatlist.length>0"
                     [datasource]="gamecatlist"
                     [skip]="gamecatlist_skip"
                     [modify_header_array]="gamecatlist_modify_header"

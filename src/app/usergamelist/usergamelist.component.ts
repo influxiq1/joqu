@@ -14,6 +14,7 @@ export class UsergamelistComponent implements OnInit {
   autoval:any;
   start_daterange:any;
   end_daterange:any;
+  getgamesval:any;
 
   constructor(public router: Router,private route: ActivatedRoute, public apiservice: ApiService) {
 
@@ -28,32 +29,32 @@ export class UsergamelistComponent implements OnInit {
   }
 
   searchusingautoval(val) {
-    console.log(this.autoval);
-    let data1;
-
-    if (val == 1) {
-      data1 = {"gamename": this.autoval};
-    }
-    else {
-      this.autoval=null;
-      data1 = {};
-    }
-
-    let data2 = {"condition": data1,source:'game_status_gretterthan_zero_view'};
-    this.apiservice.postData(this.endpoint, data2).subscribe( res => {
-      let result:any;
-      result = res;
-      console.log(result);
-      // if(result.res.length>0){
-      this.gamelist=result.res;
-      console.log('this.gamelist');
-      console.log(this.gamelist);
-      // }
-    });
+    setTimeout(()=>{
+      let data1;
+      if (val == 1) {
+        console.log(this.autoval);
+        data1 = {"gamename": this.autoval};
+      }
+      else {
+        this.autoval=null;
+        data1 = {};
+      }
+      let data2 = {"condition": data1,source:'game_status_gretterthan_zero_view'};
+      this.apiservice.postData(this.endpoint, data2).subscribe( res => {
+        let result:any;
+        result = res;
+        console.log(result);
+        this.gamelist=result.res;
+        console.log('this.gamelist');
+        console.log(this.gamelist);
+      });
+    },50);
   }
 
   getgames(val){
-    console.log(val+' -val');
+    this.getgamesval=val;
+    // console.log(val+' -val');
+    console.log(this.getgamesval+' -val');
     let data1;
 
     if(val==0){ //past games
@@ -82,5 +83,9 @@ export class UsergamelistComponent implements OnInit {
     this.start_daterange=new Date(this.start_daterange).getTime();
     this.end_daterange=new Date(this.end_daterange).getTime();
       this.getgames(2);
+  }
+  hi(){
+    console.log('...........');
+    console.log(this.autoval);
   }
 }

@@ -8,37 +8,39 @@
                 <h3> Game List </h3>
             </mat-toolbar>
             <br>
-            <mat-card-content class="game_cvr_wrpr"> <button mat-stroked-button (click)="getgames(0)" color="warn" class="s_getmyoffer_login_button"  >Past Games</button>
-                <button mat-stroked-button  (click)="getgames(1)" class="s_getmyoffer_login_button" color="primary" >Current Games</button></mat-card-content>
+            <mat-card-content class="game_cvr_wrpr"> <button mat-stroked-button (click)="getgames(0)" color="warn" class="s_getmyoffer_login_button" [ngClass]="getgamesval==0?'gamebtnselected':''" >Past Games</button>
+                <button mat-stroked-button  (click)="getgames(1)" class="s_getmyoffer_login_button" color="primary"  [ngClass]="getgamesval==1?'gamebtnselected':''">Current Games</button></mat-card-content>
 
 
 
-            <mat-card-content>
-                <input [matDatepicker]="picker" placeholder="Choose a Start date" [(ngModel)]="start_daterange">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-card-content>
-            <mat-card-content>
-                <input [matDatepicker]="endpicker" placeholder="Choose an End date" [(ngModel)]="end_daterange">
-                <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
-                <mat-datepicker #endpicker></mat-datepicker>
+            <mat-card-content class="calendar_wrapper">
+                <mat-form-field>
+                    <input [matDatepicker]="picker" placeholder="Choose a Start date" [(ngModel)]="start_daterange" matInput>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <input [matDatepicker]="endpicker" placeholder="Choose an End date" [(ngModel)]="end_daterange" matInput>
+                    <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endpicker></mat-datepicker>
+                </mat-form-field>
                 <button  mat-flat-button color="primary" (click)="updateRange()" class="s_getmyoffer_login_button"  >Search</button>
             </mat-card-content>
 
 
-            <mat-card-content class="action_bar">
+            <mat-card-content class="search_wrapper">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Search</mat-label>
-                    <input type="text" matInput [(ngModel)]="autoval" [matAutocomplete]="auto" >
+                    <input type="text" matInput [(ngModel)]="autoval" [matAutocomplete]="auto">
                 </mat-form-field>
-                <button  mat-flat-button color="primary" (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>
+                <!--<button  mat-flat-button color="primary" (click)="searchusingautoval(1)" class="s_getmyoffer_login_button"  >Search</button>-->
                 <button mat-flat-button color="warn"  (click)="searchusingautoval(2)" class="s_getmyoffer_login_button"  >Show All</button>
             </mat-card-content>
 
 
 
             <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of gamelist" [value]="option.gamename">
+                <mat-option *ngFor="let option of gamelist" [value]="option.gamename" (onSelectionChange)="searchusingautoval(1)">
                     {{option.gamename}}
                 </mat-option>
             </mat-autocomplete>
@@ -50,7 +52,7 @@
                             <mat-toolbar-row class="game_name">
                                 <span> {{item.gamename}}</span>
                                 <span class="gamebar_spacer"></span>
-                                <span> {{item.st_dt_req}}</span>
+                                <span>Starts on:  {{item.st_dt_req}}</span>
                             </mat-toolbar-row>
                         </mat-toolbar>
                         <mat-card-content class="image_wrpp">

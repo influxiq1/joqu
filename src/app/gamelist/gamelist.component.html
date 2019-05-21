@@ -4,7 +4,7 @@
      <span class="add_button_wrapper">
         <!--<button mat-raised-button [routerLink]="['/addgame']"> Add Game</button>-->
       </span>
-    <lib-listing    *ngIf="gamelist!=null && gamelist.length>0"
+    <lib-listing class="gamelist_wrapper"   *ngIf="gamelist!=null && gamelist.length>0"
                     [datasource]="gamelist"
                     [skip]="gamelist_skip"
                     [modify_header_array]="gamelist_modify_header"
@@ -14,7 +14,7 @@
                     [statusarr]="gamelist_statusarray"
                     [sourcedata]="tablename"
                     [deleteendpoint]="delurl"
-                    [date_search_source]="tablename"
+                    [date_search_source]="date_search_source"
                     [date_search_endpoint]="endpoint"
                     [search_settings]="search_settings"
                     [click_to_add_ananother_page]="click_to_add_ananother_page"

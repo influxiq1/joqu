@@ -4,7 +4,7 @@
      <!--  <progressbar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]" [type]="type">{{apiService.progress[filenamevalc]}}% </progressbar>-->
        <mat-progress-bar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]">{{apiService.progress[filenamevalc]}}%</mat-progress-bar>
    </div>
-  <h3 *ngIf="nameis" style="color: white;" >upload file:</h3> <button *ngIf="apiService.inprogress==null" (click)="fileInput1.click()" type="button" class="uploadfile">upload</button>
+  <h3 *ngIf="nameis" style="color: white;" >upload file:</h3> <button *ngIf="apiService.inprogress==null" (click)="fileInput1.click()" type="button" class="uploadfile">Upload {{buttonnameis}}</button>
 
 
 </div>

@@ -2,7 +2,6 @@
 
 
 
-
 @media only screen and (max-width: 1560px) {
     .affiliateBanner_wrapper .time_and_price .t-price_container{ padding: 5px!important; }
     .affiliateBanner_wrapper .time_and_price .t-price_container span i { padding-right: 3px; }
@@ -10,6 +9,11 @@
 }
 @media only screen and (max-width: 1440px) {
     .affiliateBanner_wrapper .time_and_price .t-price_container{ font-size: 13px; }
+}
+@media only screen and (max-width: 1422px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card{
+        width: 31.8%;
+    }
 }
 @media only screen and (max-width: 1340px) {
     .affiliateBanner_wrapper .time_and_price { flex-direction: column; }
@@ -19,6 +23,30 @@
     }
     .affiliateBanner_wrapper .time_and_price .t-price_container {
         width: 94%;}
+}
+@media only screen and (max-width: 1280px) {
+    .mat-bottom-sheet-container-medium {
+        background: #050e1d!important;
+        border: 2px solid #3c76d2;
+    }
+}
+@media only screen and (max-width: 1266px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card {
+        width: 31.6%;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    .joqulist .searchbar {
+        justify-content: center!important;
+    }
+}
+@media only screen and (max-width: 1144px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card {
+        width: 31.5%;
+    }
+}
+@media only screen and (max-width: 1094px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card { width: 31.4%;  }
 }
 @media only screen and (max-width: 960px) {
     .mat-dialog-container{ width: 80vw!important; }
@@ -31,13 +59,24 @@
     .image_wrpp {
         height: 200px;
     }
+    .mat-bottom-sheet-container {
+        min-width: 50vw!important;
+        background: #050e1d!important;
+        border: 2px solid #3c76d2;
+    }
+    .adminform { width: 80%; }
 
-
+}
+@media only screen and (max-width: 849px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card { width: 31.3%; }
+}
+@media only screen and (max-width: 810px) {
+    .affiliateBanner_wrapper .afbanner_content .mat-card { width: 31%; }
 }
 @media only screen and (max-width: 768px) {
     .affiliateBanner_wrapper .afbanner_content .mat-card {
-        width: 49%;
-        margin-bottom: 2%!important;
+        width: 47.5%;
+        margin-bottom: 1%!important;
     }
     .ng-tns-c16-3 .ng-star-inserted{
 
@@ -56,6 +95,7 @@
     .cdk-overlay-connected-position-bounding-box { width: 98%!important; }
 
     .form_wrapper{ border: none; width: 90%!important; }
+    .affiliateBanner_wrapper .afbanner_content .mat-card:nth-child(3n-1){ margin-right: 0!important;}
 }
 @media screen and (max-device-width: 760px) {
     .affiliateBanner_wrapper .ng-trigger ng-trigger-transformPickerOverlay{
@@ -66,44 +106,64 @@
 }
 
 /*@media(max-width: 668px) {*/
-    /*.mobile-label {*/
-        /*width:100px!important;*/
-        /*display: inline-block!important;*/
-        /*font-weight: bold;*/
-        /*padding: 10px 0;*/
-    /*}*/
-
-    /*.mat-header-row {*/
-        /*display: none!important;*/
-    /*}*/
-
-    /*.mat-row {*/
-        /*flex-direction: column!important;*/
-        /*align-items: start!important;*/
-        /*padding: 8px!important;*/
-        /*display: flex!important;*/
-    /*}*/
-    /*tr.mat-footer-row, tr.mat-row {*/
-        /*height: auto!important;*/
-    /*}*/
-    /*td.mat-cell, td.mat-footer-cell, th.mat-header-cell {*/
-        /*width: 100%!important;*/
-    /*}*/
-    /*.actions {*/
-        /*flex-direction: column;*/
-        /*display: initial;*/
-    /*}*/
-    /*td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{padding-left: 0!important;}*/
-    /*.mat-raised-button{margin: 3px!important;}*/
-    /*.mat-paginator-container {*/
-        /*position: fixed;*/
-        /*bottom: 0;*/
-        /*background: #fff;*/
-        /*border-top: 2px solid #f2f1f3;*/
-        /*justify-content: center!important;*/
-    /*}*/
+/*.mobile-label {*/
+/*width:100px!important;*/
+/*display: inline-block!important;*/
+/*font-weight: bold;*/
+/*padding: 10px 0;*/
 /*}*/
 
+/*.mat-header-row {*/
+/*display: none!important;*/
+/*}*/
+
+/*.mat-row {*/
+/*flex-direction: column!important;*/
+/*align-items: start!important;*/
+/*padding: 8px!important;*/
+/*display: flex!important;*/
+/*}*/
+/*tr.mat-footer-row, tr.mat-row {*/
+/*height: auto!important;*/
+/*}*/
+/*td.mat-cell, td.mat-footer-cell, th.mat-header-cell {*/
+/*width: 100%!important;*/
+/*}*/
+/*.actions {*/
+/*flex-direction: column;*/
+/*display: initial;*/
+/*}*/
+/*td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{padding-left: 0!important;}*/
+/*.mat-raised-button{margin: 3px!important;}*/
+/*.mat-paginator-container {*/
+/*position: fixed;*/
+/*bottom: 0;*/
+/*background: #fff;*/
+/*border-top: 2px solid #f2f1f3;*/
+/*justify-content: center!important;*/
+/*}*/
+/*}*/
+
+@media only screen and (max-width: 534px) {
+
+    .calendar_wrapper .mat-form-field {
+        display: block!important;
+    }
+    .calendar_wrapper{ text-align: center; }
+    .calendar_wrapper button{ width: 200px; margin: 0 auto; margin-bottom: 20px!important;}
+    .search_wrapper {
+        flex-direction: column;
+    }
+    .search_wrapper button {
+        margin-left: 0;
+        width: 200px;
+        margin: 10px auto;
+    }
+    .affiliateBanner_wrapper .afbanner_content .mat-card {
+        width: 47%;
+    }
+    .mat-bottom-sheet-container { min-width: 90vw!important; }
+}
 @media only screen and (max-width: 500px) {
     .s_getmyoffer_login_wrapper {
         width:70% !important; padding: 26px 5%!important;  margin-bottom: 40px!important;
@@ -111,27 +171,27 @@
     .s_getmyoffer .s_shatter_logo {
         margin-top: 50px!important;
     }
-      .cdk-overlay-pane {  overflow: auto!important; }
+    .cdk-overlay-pane {  overflow: auto!important; }
     .ngx-mat-drp-calendar-item {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%!important;
-
     }
+    .admindashboard_shout .add_button{ margin-left:0!important;}
 }
 @media(max-width: 480px) {
- .affiliateBanner_wrapper .afbanner_content .mat-card {
+    .affiliateBanner_wrapper .afbanner_content .mat-card {
         width: 100%;
         margin-bottom: 2%!important;
     }
-   .affiliateBanner_wrapper .example-full-width {
+    .affiliateBanner_wrapper .example-full-width {
         width: auto;
-   }
+    }
     .affiliateBanner_wrapper.mat-form-field-appearance-outline .action_bar .mat-form-field-label {
         top: 1.84375em;
         margin-top: -5px!important;
     }
     .affiliateBanner_wrapper .action_bar  .mat-form-field-appearance-outline .mat-form-field-wrapper{ margin:0!important; }
-     .affiliateBanner_wrapper .action_bar  .mat-form-field-appearance-outline .mat-form-field-infix {
+    .affiliateBanner_wrapper .action_bar  .mat-form-field-appearance-outline .mat-form-field-infix {
         padding: 10px 0;
     }
     .affiliateBanner_wrapper .action_bar button {
@@ -139,15 +199,41 @@
         font-size: 16px!important;
         margin-left: 5px;
     }
+    .searchbar .mat-form-field{ padding-left: 0;}
+    .mat-table .mat-cell { padding-left: 30%!important; }
+    .mat-paginator-container { justify-content: center!important; }
+    .joqulist .searchbar .mat-form-field,
+    .gamelist_wrapper .searchbar .mat-form-field  { width: 100%!important; }
+    .game_categorylist .searchbar .mat-form-field,
+    .admindashboard_shout .searchbar .mat-form-field,
+    .gemes_categorylist .searchbar .mat-form-field,
+    .admindashboard_games_created .searchbar .mat-form-field {
+        width: 100%!important;
+    }
+    .mat-table .mat-cell:before { left: 12px; }
+    .mat-table .mat-cell:after { left: 12px; }
 
-
+    .adminform { width: 85%; }
 }
 @media screen and (max-width: 360px){
-
-.form_wrapper {
-    width: auto;
-    padding: 10px!important;
- }
+    .mat-table .mat-cell { padding-left: 35%!important; }
+    .form_wrapper {
+        width: auto;
+        padding: 10px!important;
+    }
+    .affiliateBanner_wrapper .game_cvr_wrpr { text-align: center; }
+    .affiliateBanner_wrapper .game_cvr_wrpr button:first-child{ margin-left: 0!important; }
+    .search_wrapper button{ width: 100%; }
+    .calendar_wrapper button{ width: 100%; }
+    .custom-modalbox .mat-dialog-container { padding: 5px!important; }
+    .game_categorylist .searchbar .mat-form-field,
+    .admindashboard_shout .searchbar .mat-form-field,
+    .gemes_categorylist .searchbar .mat-form-field,
+    .admindashboard_games_created .searchbar .mat-form-field {
+        width: 100%!important;
+    }
+    .mat-list-base .mat-list-item .mat-line{ text-align: center; }
+    .gamelist_wrapper .add_button{  margin-bottom: 10px!important; margin-top: 10px!important; }
 }
 
 @media(max-width: 332px) {

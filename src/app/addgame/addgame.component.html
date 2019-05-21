@@ -101,7 +101,7 @@
     </mat-form-field>
 
     <div class="form-group col-xs-12">
-      <app-uploader uploadtype="multiple" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" ></app-uploader>
+      <app-uploader uploadtype="multiple" [uploadpath]="imageuploadpath" [filepath]="imagefilepath"  [filenameval]="uploader" [buttonname]="gamebutton"></app-uploader>
     </div>
 
     <mat-checkbox [formControl]="myForm.controls['status']">Status</mat-checkbox>

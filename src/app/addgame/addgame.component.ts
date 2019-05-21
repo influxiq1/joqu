@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRouteSnapshot, Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -36,6 +36,7 @@ export class AddgameComponent implements OnInit {
   autoval:any;
   public endpoint = 'addorupdatedata';
   public endpoint1 = 'datalist';
+  public gamebutton = 'a game picture';
   public myForm: any;
   public imageuploadpath: any = environment.uploadfolder;
   public imagefilepath: any = environment.imagefilepath;
@@ -79,6 +80,9 @@ export class AddgameComponent implements OnInit {
   //  this.getcategorylist();
 
   }
+  ngOnDestroy(){
+      this.apiService.fileservername = [];
+  }
 
  /* getcategorylist(){
     let data2 = {source:'gamecategorywisetest'};
@@ -113,49 +117,58 @@ export class AddgameComponent implements OnInit {
  onSubmit() {
   // if(typeof (this.myForm.controls['gamecategoryid'])=='object'){
   //   this.myForm.controls['gamecategoryid'].patchValue(this.myForm.controls['gamecategoryid'].value._id);
-  // }
+     // }
 
-    let x: any;
-    let data = this.myForm.value;
-    console.log(data);
+     let x: any;
+     let data = this.myForm.value;
+     console.log(data);
    
-    for (x in this.myForm.controls) {
-      this.myForm.controls[x].markAsTouched();
-    }
+     for (x in this.myForm.controls) {
+         this.myForm.controls[x].markAsTouched();
+     }
 
-    if(this.myForm.value['status']==true) this.myForm.value['status']=1;
-    else this.myForm.value['status'] = 0;
+     if(this.myForm.value['status']==true) this.myForm.value['status']=1;
+     else this.myForm.value['status'] = 0;
+     data.images = this.apiService.fileservername[this.uploader];
+     data.timezoneis = moment.tz.guess();
 
-    data.images = this.apiService.fileservername[this.uploader];
-    data.st_dt=new Date(this.myForm.value['st_dt']).getTime();
-    data.enddt=new Date(this.myForm.value['enddt']).getTime();
+     let a= moment(this.myForm.value['st_dt']).tz(moment.tz.guess()).format('MM/DD/YY  HH:MM');
+     let b= moment(this.myForm.value['enddt']).tz(moment.tz.guess()).format('MM/DD/YY  HH:MM');
+     data.st_dt=new Date(a).getTime();
+     data.enddt=new Date(b).getTime();
 
-    let data1 = {data: data,source:'game',sourceobj:['joquuser_id','gamecategoryid']};
+     if(data.enddt<data.st_dt){
+         const dialogRef = this.dialog.open(Updatetest1, {
+             data: {msg: 'End date can\'t be prior to Start date'},
+         });
+     }
+     else{
+         let data1 = {data: data,source:'game',sourceobj:['joquuser_id','gamecategoryid']};
+         if (this.myForm.valid) {
+             if (this.apiService.fileservername == null || this.apiService.fileservername[this.uploader] == null) {
+                 const dialogRef = this.dialog.open(Updatetest1, {
+                     data: {msg: 'Upload a Game Image'},
+                 });
 
-    if (this.myForm.valid) {
-      if (this.apiService.fileservername == null || this.apiService.fileservername[this.uploader] == null) {
-        const dialogRef = this.dialog.open(Updatetest1, {
-          data: {msg: 'Upload a Game Image'},
-        });
-
-      } else {
-        this.apiService.postData(this.endpoint, data1).subscribe(res => {
-          let result: any = {};
-          result = res;
-          if (result.status == 'error') {
-          }
-          if (result.status == 'success') {
-            this.router.navigate(['/gamelist']);
-            console.log('status');
-          }
-        }, error => {
-          console.log('Oooops!');
-        });
-      }
-
-
-    }
+             } else {
+                 this.apiService.postData(this.endpoint, data1).subscribe(res => {
+                     let result: any = {};
+                     result = res;
+                     if (result.status == 'error') {
+                     }
+                     if (result.status == 'success') {
+                         this.apiService.fileservername = [];
+                         this.router.navigate(['/gamelist']);
+                         console.log('status');
+                     }
+                 }, error => {
+                     console.log('Oooops!');
+                 });
+             }
+         }
+     }
   }
+
   clearfun(val) {
     this.myForm.controls[val].markAsUntouched();
   }

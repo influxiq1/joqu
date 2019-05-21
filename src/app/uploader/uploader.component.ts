@@ -26,6 +26,7 @@ export class UploaderComponent implements OnInit {
   public upimages;
   public endpoint;
   public endpointsecondimg;
+  public buttonnameis;
  // public pagename;
 
 
@@ -43,6 +44,13 @@ export class UploaderComponent implements OnInit {
     this.uploadpathc = uploadpath;
     console.log('this.uploadpathc');
     console.log(this.uploadpathc);
+  }
+  @Input()
+  set buttonname(buttonname: any) {
+    // alert(filenameval);
+    this.buttonnameis = buttonname;
+    console.log('this.buttonnameis');
+    console.log(this.buttonnameis);
   }
   @Input()
   set filepath(filepath: any) {
