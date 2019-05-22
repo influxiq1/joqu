@@ -2,7 +2,7 @@
   <input style="display: none" type="file" accept="*" ngFileSelect [options]="apiService.options" (uploadOutput)="apiService.onUploadOutput($event,filenamevalc,uploadtypec,uploadpathc)"  [uploadInput]="apiService.uploadInput" #fileInput1 >
    <div class="progressnew">
      <!--  <progressbar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]" [type]="type">{{apiService.progress[filenamevalc]}}% </progressbar>-->
-       <mat-progress-bar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]">{{apiService.progress[filenamevalc]}}%</mat-progress-bar>
+       <mat-progress-bar *ngIf=" apiService.progress[filenamevalc] !=null && apiService.progress[filenamevalc]>0" class="progress-striped active" max="100" [value]="apiService.progress[filenamevalc]">{{apiService.progress[filenamevalc]}}%</mat-progress-bar><br/>
    </div>
   <h3 *ngIf="nameis" style="color: white;" >upload file:</h3> <button *ngIf="apiService.inprogress==null" (click)="fileInput1.click()" type="button" class="uploadfile">Upload {{buttonnameis}}</button>
 
@@ -15,7 +15,7 @@
 
                       <span class="uploadthumimgbox_span">
                     <img  src="{{filepathc}}/{{img}}" >
-                    <button class="closepic" (click)="delimage(i)">Delete</button>
+                    <button mat-flat-button color="primary" class="closepic" (click)="delimage(i)">Delete</button>
                           </span>
 
 

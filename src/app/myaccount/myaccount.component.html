@@ -11,12 +11,12 @@
     <div class="example-container add_form" [formGroup]="myForm">
 
       <mat-form-field>
-        <input matInput placeholder="firstname" [formControl]="myForm.controls['firstname']" (blur)="clearfun('firstname')">
+        <input matInput placeholder="First Name" [formControl]="myForm.controls['firstname']" (blur)="clearfun('firstname')">
         <mat-error  *ngIf="!myForm.controls['firstname'].valid && myForm.controls['firstname'].touched">This field can not be blank</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="lastname" [formControl]="myForm.controls['lastname']" (blur)="clearfun('lastname')">
+        <input matInput placeholder="Last Name" [formControl]="myForm.controls['lastname']" (blur)="clearfun('lastname')">
         <mat-error  *ngIf="!myForm.controls['lastname'].valid && myForm.controls['lastname'].touched">This field can not be blank</mat-error>
       </mat-form-field>
       <mat-form-field>

@@ -442,13 +442,13 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
 
 .form_wrapper .form_add_button {
     background: #050e1d !important;
-    width: 50%;
+    width: 200px;
     color: #fff;
     margin: 20px auto !important;
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 24px;
 }
-.form_wrapper .form_add_button i{font-size: 34px!important;}
+.form_wrapper .form_add_button i{font-size: 32px!important;}
 
 /*GAME LIST*/
 .game_list_header {background: #ebebeb !important; padding: 10px!important; border-bottom: 1px solid #4a86e8;}
@@ -471,8 +471,8 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 -5px;
-
 }
+
 .afbanner_content .game_name{ padding: 0 10px!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card .mat-card-image:nth-child(1){margin: 0!important;}
 .affiliateBanner_wrapper .afbanner_content .mat-card{
@@ -588,7 +588,7 @@ td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:la
     border: none;
     padding: 5px 20px 7px;
     color: #fff;
-    font-size: 22px;
+    font-size: 16px;
     font-family: 'OpenSansSemiBold';
     margin: 15px 0;
     text-transform: capitalize;
@@ -797,3 +797,6 @@ input.mat-input-element {
 .gamebtnselected{
     background-color: #d4d2c8!important;
 }
+.uploadthumimgbox_span{ width: 100%; display: block; margin: 20px auto; border: 1px solid #d0d0d0; }
+.uploadthumimgbox_span img{ width: 100%; height: auto; vertical-align: middle; }
+.closepic{ background: #ff0000!important; margin: 15px!important;}

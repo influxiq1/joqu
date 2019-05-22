@@ -14,6 +14,7 @@ export class GamecategorylistComponent implements OnInit {
   gamecatlist_modify_header: any = {'categoryname': 'Category Name','totalcat':'Sub Categories under this', 'catsum':'Total categories inside it(catsum)', 'level':'Level', 'status':'Status', 'dateformat':'Added On','parentcategoryname': 'Parent Category Name'};
   endpoint:any='datalist';
   tablename='gamecategory';
+  search_tablename='gamecategory_view';
   delurl='deletesingledata';
   editroute1:any='gamecategoryedit';
   click_to_add_ananother_page:any='gamecategoryadd';
