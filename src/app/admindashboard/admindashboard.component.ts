@@ -16,16 +16,19 @@ export class AdmindashboardComponent implements OnInit {
   game_view_editroute1:any='gameedit';
   game_view_statusarray:any=[{val:1,name:'Active'},{val:0,name:'Inactive'}];
   game_view_click_to_add_ananother_page:'gameadd';
-  game_view_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.game_view_statusarray}],textsearch:[{label:"Search By Game Name",field:'gamename'}]};
+  // game_view_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.game_view_statusarray}],textsearch:[{label:"Search By Game Name",field:'gamename'}]};
+  game_view_search_settings:any={datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search By Date",  field:"created_at"}],selectsearch:[{label:'Search By Status',field:'status',values:this.game_view_statusarray}],textsearch:[{label:"Search By Game Name",field:'gamename'}]};
 
   joqu_userlist_view: any = [];
   joqu_userlist_view_modify_header: any = { 'name': 'Full Name','email':'Email', 'age':'Age', 'dateformat':'Date','status':'Status','phone':'Phone'};
-  joqu_userlist_view_skip: any = ['_id','password','instagramlink','shatterblok_user_id','city'];
+  joqu_userlist_view_skip: any = ['_id','password','instagramlink','shatterblok_user_id','city','created_at'];
   joqu_userlist_view_statusarray:any=[{val:2,name:'Processed by admin'},{val:3,name:'Shout A/c Created'}];
   joqu_userlist_view_editroute1:any='joquedit';
   // joqu_userlist_tablename:any='users';
   joqu_userlist_tablename:any='joqu_userlist_view';
-  joqu_userlist_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.joqu_userlist_view_statusarray}],textsearch:[{label:"Search By Email",field:'email'}]};
+  // joqu_userlist_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.joqu_userlist_view_statusarray}],textsearch:[{label:"Search By Email",field:'email'}]};
+  joqu_userlist_search_settings:any={datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search By Date",  field:"created_at"}],selectsearch:[{label:'Search By Status',field:'status',values:this.joqu_userlist_view_statusarray}],textsearch:[{label:"Search By Email",field:'email'}]};
+
 
   gamecat_view: any=[];
   gamecat_view_skip: any= ['_id'];
@@ -35,7 +38,11 @@ export class AdmindashboardComponent implements OnInit {
   gamecat_view_editroute1:any='gamecategoryedit';
   gamecat_view_statusarray:any=[{val:1,name:'Active'},{val:0,name:'Inactive'}];
   gamecat_view_click_to_add_ananother_page:any='gamecategoryadd';
-  gamecat_view_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.gamecat_view_statusarray}],textsearch:[{label:"Search By Game Category",field:'categoryname'}]};
+  // gamecat_view_search_settings:any={datesearch:{startdatelabel:"Start Date",enddatelabel:"End Date"},selectsearch:[{label:'Search By Status',field:'status',values:this.gamecat_view_statusarray}],textsearch:[{label:"Search By Game Category",field:'categoryname'}]};
+  gamecat_view_search_settings:any={
+    datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search By Date",  field:"created_at"}],
+    selectsearch:[{label:'Search By Status',field:'status',values:this.gamecat_view_statusarray}],
+    textsearch:[{label:"Search By Game Category",field:'categoryname'}]};
 
   endpoint:any='datalist';
   delurl='deletesingledata';
