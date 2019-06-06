@@ -12,7 +12,7 @@ import { ApiService } from '../../app/api.service';
 export class ForgetpasswordComponent implements OnInit {
 
     public myForm: any;
-    public showmessage: any ='';
+    public showmessage: any = '';
     public result: any;
     public endpoint = 'sendforgotpasswordemail';
     public endpoint1 = 'resetpassword';

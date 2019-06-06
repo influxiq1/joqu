@@ -800,3 +800,18 @@ input.mat-input-element {
 .uploadthumimgbox_span{ width: 100%; display: block; margin: 20px auto; border: 1px solid #d0d0d0; }
 .uploadthumimgbox_span img{ width: 100%; height: auto; vertical-align: middle; }
 .closepic{ background: #ff0000!important; margin: 15px!important;}
+
+.tree_function { width: 360px; margin: 30px auto;  }
+ mat-tree-node { width: auto;  }
+.tree_function mat-tree-node{    color: #0a0101!important;
+    background: #d4d3d3 !important;
+    border-bottom: 1px solid #969292;
+}
+.tree_function .treeblock{color: #07152b!important; background: #eae9e9!important; border-bottom: 1px solid #cecaca;}
+
+.tree_function .action_button{
+    background-color: #4886e5!important;
+    margin-left: auto!important;
+    margin-right: 8px!important;
+}
+.mat_tab_group .mat-tab{ width: 50%!important;}

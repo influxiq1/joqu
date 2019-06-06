@@ -5,7 +5,7 @@
      <span class="logo_wrapper_login">
       <img mat-card-image src="../../assets/images/joqulogo.png" alt="#"  style="box-shadow: none;">
     </span>
-    <mat-card-subtitle [formGroup]="myForm">
+    <form [formGroup]="myForm">
       <h1>Login</h1>
       <p>welcome back!</p>
       <mat-error class="error" *ngIf="errormg!=''">{{errormg}}</mat-error>
@@ -27,7 +27,7 @@
       <mat-card-content class="form-group-forgetPass">
         <button mat-button (click)="onForgetPassword()"  class="shatter_block_forgetPass">forget Password?</button>
       </mat-card-content>
-    </mat-card-subtitle>
+    </form>
   </mat-card-content>
 
 </mat-card>

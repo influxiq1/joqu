@@ -28,10 +28,10 @@ export class ApiService {
   public lengthis;
   public percentageis;
   public inprogress;
-  public progress:any=[];
+  public progress: any = [];
   public uploadtype;
-  public uploaderror:any='';
-  fileservername:any=[];
+  public uploaderror: any = '';
+  fileservername: any = [];
 
 
   constructor(private _http: HttpClient,
@@ -42,7 +42,7 @@ export class ApiService {
   ) {
     console.log('this.domain');
     console.log(this.domain);
-    this.jwttoken=this.cookieService.get('jwttoken');
+    this.jwttoken = this.cookieService.get('jwttoken');
     this.options = { concurrency: 10, maxUploads: 10 };
     this.files = []; // local uploading files array
     this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
@@ -69,7 +69,7 @@ export class ApiService {
         'access-token': this.cookieService.get('jwttoken')
       })
     };
-    let condition:any=endpoint.condition;
+    let condition : any = endpoint.condition;
     console.log(condition);
     var result = this._http.post(this._url + endpoint.source, condition, httpOptions).pipe(map(res => res));
     console.log(result);

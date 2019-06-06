@@ -42,6 +42,7 @@ import { UsergamecategoryviewComponent } from './usergamecategoryview/usergameca
 import { GamecategorylistComponent } from './gamecategorylist/gamecategorylist.component';
 import { GamecategoryeditComponent } from './gamecategoryedit/gamecategoryedit.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { AffiliateListComponent } from './affiliate-list/affiliate-list.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
     JoqulistComponent,
     JoqueditComponent,Updatetest3,
     AddgameComponent,Updatetest1,
-    GamelistComponent, GameeditComponent,UploaderComponent,Updatetest4, UsergamelistComponent, GamecategoryaddComponent, TestComponent, UsergamecategoryviewComponent, GamecategorylistComponent, GamecategoryeditComponent, MyaccountComponent
+    GamelistComponent, GameeditComponent,UploaderComponent,Updatetest4, UsergamelistComponent, GamecategoryaddComponent, TestComponent, UsergamecategoryviewComponent, GamecategorylistComponent, GamecategoryeditComponent, MyaccountComponent, AffiliateListComponent
   ],
   imports: [
     BrowserModule,

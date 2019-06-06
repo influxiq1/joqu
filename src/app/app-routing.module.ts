@@ -23,6 +23,7 @@ import {UsergamecategoryviewComponent} from "./usergamecategoryview/usergamecate
 import {GamecategorylistComponent} from "./gamecategorylist/gamecategorylist.component";
 import {GamecategoryeditComponent} from "./gamecategoryedit/gamecategoryedit.component";
 import {MyaccountComponent} from "./myaccount/myaccount.component";
+import {AffiliateListComponent} from './affiliate-list/affiliate-list.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'forgetpassword', component: ForgetpasswordComponent},
   {path: 'resetpassword/:token', component: ResetpasswordComponent},
+  {path: 'affiliateList', component: AffiliateListComponent, canActivate: [AuthGuard], resolve: {results: Resolveservice}, data: {source: 'datalist', condition: {myid:'gamecategory_view'}}},
+  // {path: 'affiliateList/:parentcategoryname/:categoryname', component: AffiliateListComponent, canActivate: [AuthGuard], resolve: {results: Resolveservice}, data: {source: 'datalist', condition: {myid:'gamecategory_view'}}},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'adminlist', component: AdminlistComponent, canActivate: [AuthGuard]},
   {path: 'form', component: FormComponent},
